@@ -17,7 +17,7 @@ export class BooksService {
     //favorites: any[] = [];
     constructor(private http: HttpClient) {}
 
-    getBooks() { return this.http.get(this.urlString).subscribe( (data) => { console.log(data); }, (error) => console.log(error) ); } }
+    getBooks() { return this.http.get(this.url).subscribe( (data) => { console.log(data); }, (error) => console.log(error) ); } }
   
       
       // this.http.get(requestUrl).subscribe(
