@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 interface Response {
-  results: Book[];
+  // results: Book[];
   title: string;
   authors: string;
   thumbnail: string;
