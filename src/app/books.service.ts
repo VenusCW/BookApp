@@ -24,7 +24,7 @@ export class BooksService {
     //favorites: any[] = [];
     constructor(private http: HttpClient) {}
 
-    // getBooks() { return this.http.get(this.url).subscribe( (data) => { console.log(data); }, (error) => console.log(error) ); } }
+    getBooks() { return this.http.get(this.url).subscribe( (data) => { console.log(data); }, (error) => console.log(error) ); } }
 
     // getBooks() {
     //   const url = 'https://www.reddit.com/r/aww/.json';
