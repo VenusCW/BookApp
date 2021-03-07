@@ -23,10 +23,20 @@ export class BooksService {
 
   constructor(private http: HttpClient) {}
 
-  getBooks(search: string) {
+  getBooks(search: string, authors: string, subject: string) {
     console.log(search);
     {
-      const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
+      const requestUrl =
+        this.url +
+        '?q=' +
+        search +
+        '+inauthor:' +
+        authors +
+        '+subject:' +
+        subject +
+        '&printType=books' +
+        '&key=' +
+        this.key;
 
       this.http.get(requestUrl).subscribe(
         (response: any) => {
@@ -37,34 +47,33 @@ export class BooksService {
     }
   }
 
-      // getBooks(search: string) {
-      //   const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
-      //   this.http.get(requestUrl).subscribe(
-      //     (response: any) => {
-      //       console.log(response);
-      //       const books = response.data.children;
+  // getBooks(search: string) {
+  //   const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
+  //   this.http.get(requestUrl).subscribe(
+  //     (response: any) => {
+  //       console.log(response);
+  //       const books = response.data.children;
 
-      //       for (let book of books) {
-      //         const bookList: Response = {
-      //           title: book.data.title,
-      //           authors: book.data.authors,
-      //           thumbnail: book.data.thumbnail,
-      //           categories: book.data.categories,
-      //           publishedDate: book.data.publishedDate,
-      //           language: book.data.language
-      //         };
-      //         this.bookList.push(bookList);
-      //       }
-      //       console.log(this.bookList);
-      //     }
-      //     // (error) => console.log(error)
-      //   );
-      // }
-
+  //       for (let book of books) {
+  //         const bookList: Response = {
+  //           title: book.data.title,
+  //           authors: book.data.authors,
+  //           thumbnail: book.data.thumbnail,
+  //           categories: book.data.categories,
+  //           publishedDate: book.data.publishedDate,
+  //           language: book.data.language
+  //         };
+  //         this.bookList.push(bookList);
+  //       }
+  //       console.log(this.bookList);
+  //     }
+  //     // (error) => console.log(error)
+  //   );
+  // }
 
   // this.http.get(requestUrl).subscribe(
   //   (response: Response) => {
   //     console.log(response.results);
   //     //this.movies = response.results;
   //     const newBook = response.results;
-  }
+}
