@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 interface Response {
   // results: Book[];
@@ -11,45 +11,60 @@ interface Response {
   language: string;
 }
 
-
-
 @Injectable({
   providedIn: 'root',
 })
 export class BooksService {
-    apiKey = "AIzaSyDg4C1YgpmGasG5b6RaoBMmMX-WWWxuzpM";
-    //appId = "3096e7e1";
-    url = "https://www.googleapis.com/books/v1/volumes?q=roots+intitle";
-    //public books: Book[];
-    //favorites: any[] = [];
-    constructor(private http: HttpClient) {}
+  key = 'AIzaSyDg4C1YgpmGasG5b6RaoBMmMX-WWWxuzpM';
+  url = 'https://www.googleapis.com/books/v1/volumes';
+  books: any[] = [];
+  // favorites: any[] = [];
+  bookList: Response[] = [];
 
-    getBooks() { return this.http.get(this.url).subscribe( (data) => { console.log(data); }, (error) => console.log(error) ); } }
+  constructor(private http: HttpClient) {}
 
-    // getBooks() {
-    //   const url = 'https://www.reddit.com/r/aww/.json';
-    //   this.http.get(url).subscribe(
-    //     (response: any) => {
-    //       console.log(response);
-    //       const posts = response.data.children;
+  getBooks(search: string) {
+    console.log(search);
+    {
+      const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
 
-    //       for (let post of posts) {
-    //         const redditPost: RedditResponse = {
-    //           title: post.data.title,
-    //           link: 'https://reddit.com' + post.data.permalink,
-    //           image: post.data.thumbnail,
-    //           thread: post.data.comment,
-    //         };
-    //         this.awwPost.push(redditPost);
-    //       }
-    //       console.log(this.awwPost);
-    //     }
+      this.http.get(requestUrl).subscribe(
+        (response: any) => {
+          this.books = response.hits;
+        },
+        (error) => console.log(error)
+      );
+    }
+  }
+
+      // getBooks(search: string) {
+      //   const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
+      //   this.http.get(requestUrl).subscribe(
+      //     (response: any) => {
+      //       console.log(response);
+      //       const books = response.data.children;
+
+      //       for (let book of books) {
+      //         const bookList: Response = {
+      //           title: book.data.title,
+      //           authors: book.data.authors,
+      //           thumbnail: book.data.thumbnail,
+      //           categories: book.data.categories,
+      //           publishedDate: book.data.publishedDate,
+      //           language: book.data.language
+      //         };
+      //         this.bookList.push(bookList);
+      //       }
+      //       console.log(this.bookList);
+      //     }
+      //     // (error) => console.log(error)
+      //   );
+      // }
 
 
-
-      // this.http.get(requestUrl).subscribe(
-      //   (response: Response) => {
-      //     console.log(response.results);
-      //     //this.movies = response.results;
-      //     const newBook = response.results;
-
+  // this.http.get(requestUrl).subscribe(
+  //   (response: Response) => {
+  //     console.log(response.results);
+  //     //this.movies = response.results;
+  //     const newBook = response.results;
+  }
