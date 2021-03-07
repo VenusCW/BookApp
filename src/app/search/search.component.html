@@ -13,5 +13,5 @@
 
 <!-- this could probably be a new component -->
 <div *ngFor="let book of BooksService.books; let i = index"  class="results">
-  <h3>{{ book.title }}</h3>
+  <h3>{{ this.book.title }}</h3>
 </div>
