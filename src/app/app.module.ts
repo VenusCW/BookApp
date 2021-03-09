@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExistingLibraryComponent } from './existing-library/existing-library.component';
 import { AddLibraryComponent } from './add-library/add-library.component';
+// import { FormsModule } from '@angular/forms';
+import { LandingComponent } from './landing/landing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -20,8 +22,17 @@ import { NavigationComponent } from './navigation/navigation.component';
     AddLibraryComponent,
     NotFoundComponent,
     NavigationComponent,
+    LandingComponent,
+
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
