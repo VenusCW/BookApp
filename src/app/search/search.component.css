@@ -1,0 +1,9 @@
+#preview {
+  text-decoration: underline;
+  color: blue;
+}
+a:hover {
+  text-decoration: none;
+  background-color: yellow;
+  font-size: larger;
+}

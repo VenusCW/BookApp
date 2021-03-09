@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   books: any;
-  queryField: FormControl = new FormControl();
+  // queryField: FormControl = new FormControl();
   public generalSearch: string = '';
   public author: string = '';
   public subjectSearch: string = '';
@@ -25,5 +25,10 @@ export class SearchComponent implements OnInit {
 
   constructor(public BooksService: BooksService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.BooksService.getNewBooks()
+  }
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }

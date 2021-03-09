@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BooksService } from '../books.service';
-import {Routes} from '@angular/router';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -12,8 +12,9 @@ export class LandingComponent implements OnInit {
   constructor(public BooksService: BooksService) {}
 
   ngOnInit(): void {
-    this.BooksService.getBooks();
-  }}
+    // this.BooksService.getBooks();
+  }
+}
 //   const randomQuotes = require('request');
 
 // const options = {
@@ -32,4 +33,3 @@ export class LandingComponent implements OnInit {
 
 //       console.log(body);
 //   });
-
