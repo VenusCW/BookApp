@@ -12,7 +12,11 @@ export class LandingComponent implements OnInit {
   constructor(public BooksService: BooksService) {}
 
   ngOnInit(): void {
+<<<<<<< HEAD
 
+=======
+    this.BooksService.getBooks();
+>>>>>>> 54ca729b013037304e3bdd474872b32441dd8751
   }}
 //   const randomQuotes = require('request');
 
