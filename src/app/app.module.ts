@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -19,15 +19,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     ExistingLibraryComponent,
     AddLibraryComponent,
     NotFoundComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
