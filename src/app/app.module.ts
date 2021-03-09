@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExistingLibraryComponent } from './existing-library/existing-library.component';
 import { AddLibraryComponent } from './add-library/add-library.component';
+import {LandingComponent} from './landing/landing.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -14,7 +15,8 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     SearchComponent,
     ExistingLibraryComponent,
-    AddLibraryComponent
+    AddLibraryComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
