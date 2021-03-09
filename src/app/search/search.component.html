@@ -1,23 +1,17 @@
-<form>
-  <!-- search input -->
-  <h2 class="searchBooks">Search for Books</h2>
-  <input
-    [(ngModel)]="generalSearch"
-    placeholder="Search for Books"
-    class="filter"
-    name="search"
-  />
-  <input [(ngModel)]="author" placeholder="search by author" name="search" />
-  <input
-    [(ngModel)]="subjectSearch"
-    placeholder="search by subject"
-    name="search"
-  />
+<!-- search input -->
+<h2 class="searchBooks">Search for Books</h2>
+<input
+  [(ngModel)]="generalSearch"
+  placeholder="Search for Books"
+  class="filter"
+/>
+<input [(ngModel)]="author" placeholder="search by author" />
+<input [(ngModel)]="subjectSearch" placeholder="search by subject" />
 
-  <button (click)="getBookList()">Search</button>
-</form>
-
+<button (click)="getBooksList()">Search</button>
 <!-- this could probably be a new component -->
-<div *ngFor="let book of BooksService.books; let i = index" class="results">
-  <h3>{{ this.book.title }}</h3>
+<div *ngFor="let book of BooksService.books" class="results">
+  <p>title: {{ book.volumeInfo.title }}</p>
 </div>
+
+

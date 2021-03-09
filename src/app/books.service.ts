@@ -23,6 +23,7 @@ export class BooksService {
 
   constructor(private http: HttpClient) {}
 
+  //search by string only, add maxReturn
   getBooks(search: string, authors: string, subject: string) {
     console.log(search);
     {
@@ -34,13 +35,12 @@ export class BooksService {
         authors +
         '+subject:' +
         subject +
-        '&printType=books' +
         '&key=' +
         this.key;
 
       this.http.get(requestUrl).subscribe(
         (response: any) => {
-          this.books = response.hits;
+          this.books = response.items;
         },
         (error) => console.log(error)
       );
@@ -67,7 +67,7 @@ export class BooksService {
   //       }
   //       console.log(this.bookList);
   //     }
-  //     // (error) => console.log(error)
+  // (error) => console.log(error)
   //   );
   // }
 
@@ -76,4 +76,10 @@ export class BooksService {
   //     console.log(response.results);
   //     //this.movies = response.results;
   //     const newBook = response.results;
+
+  // getBooks(queryField: string) {
+  //   return this.http.get(
+  //     `https://www.googleapis.com/books/v1/volumes?q=${queryField}&maxResults=39&key=${this.key}`
+  //   );
+  // }
 }
