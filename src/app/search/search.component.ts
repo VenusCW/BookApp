@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -8,9 +9,21 @@ import { BooksService } from '../books.service';
   providers: [BooksService],
 })
 export class SearchComponent implements OnInit {
+  books: any;
+  queryField: FormControl = new FormControl();
+  public generalSearch: string = '';
+  public author: string = '';
+  public subjectSearch: string = '';
+
+  getBooksList(): void {
+    this.BooksService.getBooks(
+      this.generalSearch,
+      this.author,
+      this.subjectSearch
+    );
+  }
+
   constructor(public BooksService: BooksService) {}
 
-  ngOnInit(): void {
-    this.BooksService.getBooks();
-  }
+  ngOnInit() {}
 }

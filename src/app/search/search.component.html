@@ -1,1 +1,17 @@
-<p>search works!</p>
+<!-- search input -->
+<h2 class="searchBooks">Search for Books</h2>
+<input
+  [(ngModel)]="generalSearch"
+  placeholder="Search for Books"
+  class="filter"
+/>
+<input [(ngModel)]="author" placeholder="search by author" />
+<input [(ngModel)]="subjectSearch" placeholder="search by subject" />
+
+<button (click)="getBooksList()">Search</button>
+<!-- this could probably be a new component -->
+<div *ngFor="let book of BooksService.books" class="results">
+  <p>title: {{ book.volumeInfo.title }}</p>
+</div>
+
+
