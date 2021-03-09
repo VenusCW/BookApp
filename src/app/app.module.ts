@@ -23,14 +23,16 @@ import { NavigationComponent } from './navigation/navigation.component';
     NotFoundComponent,
     NavigationComponent,
     LandingComponent,
+    
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  
   providers: [],
   bootstrap: [AppComponent],
 })
