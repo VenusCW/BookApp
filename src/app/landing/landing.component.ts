@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BooksService } from '../books.service';
 import {Routes} from '@angular/router';
 import {QuotesService} from '../quotes.service';
 import {FormControl} from '@angular/forms';

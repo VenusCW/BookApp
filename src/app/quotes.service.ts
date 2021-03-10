@@ -31,8 +31,29 @@ export class QuotesService {
 }
 getUrlWithApiKey(){
   return `${this.url}?api_key=${this.apiKey}&language=en-US`;
-}
-}
+
+//   const randomQuotes = require('request');
+
+//   const options = {
+
+//       method: 'GET',
+//       url: 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote',
+//       qs: {token: 'ipworld.info'},
+//       headers: {
+//         'x-rapidapi-key': '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc',
+//         'x-rapidapi-host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com',
+//         useQueryString: true
+//       }
+//     };
+
+//     request(options, function (error, response, body) {
+//         if (error) throw new Error(error);
+
+//         console.log(body);
+//     });
+// }
+// }
+
 // const requestURL = require('request');
 
 // getRandomQuotes(){
