@@ -1,22 +1,24 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BooksService } from '../books.service';
 import {Routes} from '@angular/router';
-
+import {QuotesService} from '../quotes.service';
+import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css'],
-  providers: [BooksService],
+  providers: [QuotesService],
 })
 export class LandingComponent implements OnInit {
-  constructor(public BooksService: BooksService) {}
+  quotes: any;
+  // queryField;
+
+  getQuotes(): void{
+
+  }
+  constructor(public QuotesService: QuotesService) {}
 
   ngOnInit(): void {
-<<<<<<< HEAD
-
-=======
-    this.BooksService.getBooks();
->>>>>>> 54ca729b013037304e3bdd474872b32441dd8751
   }}
 //   const randomQuotes = require('request');
 
