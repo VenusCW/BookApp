@@ -23,7 +23,7 @@ export class QuotesService {
    (Response) =>{
      console.log(Response);
     //  const options = response.results;
-}
+},
 (error)=>{
   console.error(error);
 }
