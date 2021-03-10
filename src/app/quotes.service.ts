@@ -31,6 +31,8 @@ export class QuotesService {
 }
 getUrlWithApiKey(){
   return `${this.url}?api_key=${this.apiKey}&language=en-US`;
+}
+}
 
 //   const randomQuotes = require('request');
 
