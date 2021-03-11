@@ -1,76 +1,82 @@
 /* //For Mobile View */
-    nav .mainMenu{
-        height: 100vh; 
-        position: fixed; 
-        top: 0; 
-        right: 0; 
-        left: 0; 
-        z-index: 10; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background:grey;
-        transition: top 1s ease;
-        display: none; 
-    }
-nav .mainMenu .closeMenu{
-    display: block;
-    position: absolute; 
-    top: 20px; 
-    right: 20px; 
+h1 {
+  font-family: "Homemade Apple", cursive;
+  text-align: center;
+  background-color: black;
+  margin: 0;
+  padding-top: 5px;
+  color: white;
+}
+nav .mainMenu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  transition: top 1s ease;
+  display: none;
+}
+nav .mainMenu .closeMenu {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-nav .openMenu{
-    display: block; 
+nav .openMenu {
+  display: block;
 }
 
-.icons i{
-    display: inline-block; 
-    padding: 12px; 
+.icons i {
+  display: inline-block;
+  padding: 12px;
 }
 
-button{
-    display: flex; 
-    float: right; 
+button {
+  display: flex;
+  float: right;
 }
 
 /* //For Desktop View */
-@media only screen and (min-width:768px){
-
-* {
+@media only screen and (min-width: 768px) {
+  * {
     box-sizing: border-box;
-    margin: 0; 
-    padding: 0;  
-}
+    margin: 0;
+    padding: 0;
+  }
 
-/* nav {
+  /* nav {
     background-color:grey;
     color: #fff;
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
 }
 
 nav .mainMenu{
-   display: flex; 
-   list-style: none;  
+   display: flex;
+   list-style: none;
 }
 
 nav .mainMenu li a{
     display: inline-block;
-    padding: 15px; 
+    padding: 15px;
     text-decoration: none;
-    color: #fff;  
+    color: #fff;
 }
 
 nav .openMenu{
     font-size: 2rem;
-    margin: 20px; 
+    margin: 20px;
     display: none;
 }
 
 nav .mainMenu .closeMenu, .icons i{
     font-size: 2rem;
-    display: none;  
+    display: none;
 } */
-
 }

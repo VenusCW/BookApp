@@ -1,3 +1,9 @@
+h2 {
+  font-family: 'Homemade Apple', cursive;
+  text-align: center;
+  font-size: large;
+  /* margin-top: 15px;  */
+}
 #preview {
   text-decoration: underline;
   color: blue;
@@ -16,6 +22,18 @@ a:hover {
 .search {
   width: 70vw;
   margin-right: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-style: italic;
+  font-size: medium;
+  padding: none;
+}
+.getBooks {
+  height: 2vh;
+  margin-top: 9px;
+  
 }
 .results {
   display: grid;
