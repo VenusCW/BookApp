@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule} from '@angular/router';
-
 import { SearchComponent } from './search/search.component';
 import { ExistingLibraryComponent } from './existing-library/existing-library.component';
 import { AddLibraryComponent } from './add-library/add-library.component';
-
 import { NotFoundComponent } from './not-found/not-found.component';
-
 import {LandingComponent} from './landing/landing.component';
+
 
 const routes: Routes = [
 
@@ -21,9 +18,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  
-  
-  
+
+
+
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
