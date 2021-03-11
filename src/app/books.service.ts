@@ -44,46 +44,9 @@ export class BooksService {
       );
     }
   }
-  getNewBooks() {
-      return this.http.get(
-        `https://www.googleapis.com/books/v1/volumes?q='best seller' + &maxResults=39&key=${this.key}`
-      );
-    }
-
-
-  // getBooks(search: string) {
-  //   const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
-  //   this.http.get(requestUrl).subscribe(
-  //     (response: any) => {
-  //       console.log(response);
-  //       const books = response.data.children;
-
-  //       for (let book of books) {
-  //         const bookList: Response = {
-  //           title: book.data.title,
-  //           authors: book.data.authors,
-  //           thumbnail: book.data.thumbnail,
-  //           categories: book.data.categories,
-  //           publishedDate: book.data.publishedDate,
-  //           language: book.data.language
-  //         };
-  //         this.bookList.push(bookList);
-  //       }
-  //       console.log(this.bookList);
-  //     }
-  // (error) => console.log(error)
-  //   );
-  // }
-
-  // this.http.get(requestUrl).subscribe(
-  //   (response: Response) => {
-  //     console.log(response.results);
-  //     //this.movies = response.results;
-  //     const newBook = response.results;
-
-  // getBooks(queryField: string) {
-  //   return this.http.get(
-  //     `https://www.googleapis.com/books/v1/volumes?q=${queryField}&maxResults=39&key=${this.key}`
-  //   );
-  // }
+  // getNewBooks() {
+  //     return this.http.get(
+  //       `https://www.googleapis.com/books/v1/volumes?q='best seller' + &maxResults=39&key=${this.key}`
+  //     );
+  //   }
 }

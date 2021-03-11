@@ -1,6 +1,9 @@
 <body>
-<h1>Welcome</h1>
-<button (click)= "($event)">Let's Read!
-  <!-- <p>Let's Read!!</p> -->
-</button>
+  <h1>Welcome</h1>
+  <!-- <div *ngFor="let quote of QuotesService.quotes">{{ quote.content }}</div> -->
+  <div>{{ this.QuotesService.quotes }}</div>
+  <a routerLink="">Let's Read!</a>
+
+    <!-- <p>Let's Read!!</p> -->
+
 </body>

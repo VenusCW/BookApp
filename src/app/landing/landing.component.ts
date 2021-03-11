@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Routes } from '@angular/router';
 import { QuotesService } from '../quotes.service';
 import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -9,15 +10,16 @@ import { FormControl } from '@angular/forms';
   providers: [QuotesService],
 })
 export class LandingComponent implements OnInit {
-  quotes: any;
-  // queryField;
+  quotes: any [] = [];
 
-  getQuotes(): void {}
   constructor(public QuotesService: QuotesService) {}
 
   ngOnInit(): void {
-    this.getQuotes();
+    this.QuotesService.getQuotes();
   }
+  // goToSearchPage(SearchComponent) {
+  //   window.open(url, "_blank");
+  // }
 }
 //   const randomQuotes = require('request');
 
