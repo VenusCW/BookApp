@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { QuotesService } from '../quotes.service';
+
 import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-landing',
@@ -9,15 +10,14 @@ import { FormControl } from '@angular/forms';
   providers: [QuotesService],
 })
 export class LandingComponent implements OnInit {
-  quotes: any;
+  apiUrl ='https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
+  // quotes: any;
   // queryField;
 
-  getQuotes(): void {}
-  constructor(public QuotesService: QuotesService) {}
+  // getQuotes(): void {}
+  constructor(public quotesService:QuotesService) {}
 
-  ngOnInit(): void {
-    this.getQuotes();
-  }
+ngOnInit(): void{}
 }
 //   const randomQuotes = require('request');
 
