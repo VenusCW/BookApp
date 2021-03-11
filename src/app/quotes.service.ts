@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface Response{
+interface Response {
   results: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuotesService {
-   apiKey = 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote'
-   url = '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc';
-   public quotes: any[] = [];
+  url =
+    'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
+  apiKey = '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc';
+  public quotes: any[] = [];
   //  randomQuotes: Response[] = [];
- constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
- getQuotes() {
-   const requestURL =
-   this.getUrlWithApiKey();
+  getQuotes() {
+    const requestURL = this.getUrlWithApiKey();
 
- this.http.get(requestURL).subscribe(
-   (Response) =>{
-     console.log(Response);
-    //  const options = response.results;
-},
-(error)=>{
-  console.error(error);
-}
-);
-}
-getUrlWithApiKey(){
-  return `${this.url}?api_key=${this.apiKey}&language=en-US`;
-}
+    this.http.get(requestURL).subscribe(
+      (Response) => {
+        console.log(Response);
+        //  const options = response.results;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  getUrlWithApiKey() {
+    return `${this.url}?api_key=${this.apiKey}&language=en-US`;
+  }
 }
 
 //   const randomQuotes = require('request');
