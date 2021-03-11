@@ -31,10 +31,8 @@ export class BooksService {
         this.url +
         '?q=' +
         search +
-        '+inauthor:' +
-        authors +
-        '+subject:' +
-        subject +
+        +'&orderBy=newest' +
+        '&maxResults=30' +
         '&key=' +
         this.key;
 
@@ -46,6 +44,12 @@ export class BooksService {
       );
     }
   }
+  getNewBooks() {
+      return this.http.get(
+        `https://www.googleapis.com/books/v1/volumes?q='best seller' + &maxResults=39&key=${this.key}`
+      );
+    }
+
 
   // getBooks(search: string) {
   //   const requestUrl = this.url + '?q=' + search + '&key=' + this.key;
