@@ -7,3 +7,19 @@ a:hover {
   background-color: yellow;
   font-size: larger;
 }
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 4vh;
+}
+.search {
+  width: 70vw;
+  margin-right: 5px;
+}
+.results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
