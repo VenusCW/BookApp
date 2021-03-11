@@ -15,8 +15,10 @@
 <!-- this could probably be a new component -->
 <div *ngFor="let book of BooksService.books" class="results">
   <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
-  <p>Title: {{ book.volumeInfo.title }}</p>
-  <p>Author: {{ book.volumeInfo.authors }}</p>
-  <a id="preview" (click)="goToLink(book.volumeInfo.previewLink)">Preview</a>
-  <button>Add to Library</button>
+  <div id="details">
+    <p>Title: {{ book.volumeInfo.title }}</p>
+    <p>Author: {{ book.volumeInfo.authors }}</p>
+    <a id="preview" (click)="goToLink(book.volumeInfo.previewLink)">Preview</a>
+    <button>Add to Library</button>
+  </div>
 </div>
