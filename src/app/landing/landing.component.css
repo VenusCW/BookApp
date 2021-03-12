@@ -37,27 +37,14 @@ h1{
 .read{
   background-color:#942569;
   border: 2px solid #886d51;
-  border-radius: 25%;
-  width: 150px;
-  margin-top: 50px;
+  border-radius: 50%;
+  width:fit-content;
   padding-top: 25px;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
   /* text-align: center; */
 }
 .nameBox{
-  display: flex;
-  justify-content: center;
   margin-bottom: 15px;
   padding-top: 50px;
   text-align: center;
-}
-a {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  margin-left: 33%;
 }
 
