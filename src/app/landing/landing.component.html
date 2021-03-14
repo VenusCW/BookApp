@@ -1,7 +1,7 @@
 <body>
   <!-- <h1>Welcome</h1> -->
   <!-- <div *ngFor="let quote of QuotesService.quotes">{{ quote.content }}</div> -->
-  <h1>{{ this.QuotesService.quotes }}</h1>
+  <h1>"{{ this.QuotesService.quotes }}"</h1>
 
   <div class="nameBox">
     <input
@@ -19,7 +19,7 @@
     />
   </div>
 
-  <a routerLink="/search" class="read">Let's Read!</a>
+  <button routerLink="/search" class="read">Let's Read!</button>
 
   <!-- <p>Let's Read!!</p> -->
 

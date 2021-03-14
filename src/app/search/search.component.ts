@@ -18,17 +18,21 @@ export class SearchComponent implements OnInit {
   getBooksList(): void {
     this.BooksService.getBooks(
       this.generalSearch,
-      this.author,
-      this.subjectSearch
+      // this.author,
+      // this.subjectSearch
     );
   }
+
 
   constructor(public BooksService: BooksService) {}
 
   ngOnInit() {
-    // this.BooksService.getNewBooks()
+    // this.BooksService.getBooks();
   }
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+  addToLibrary(): void {
+
   }
 }
