@@ -7,9 +7,9 @@ const pool = require('./connection');
 
 routes.get("/routes", (req, res) => {
 
-    pool.query('SELECT * FROM books').then(result => {
-        const items = result.rows;
-        res.json(items);
+    pool.query('SELECT * FROM library WHERE name = $1', [readername]).then ((result) => {
+        const books = result.rows;
+        res.json(books);
         res.status(200);
     });
 });    
@@ -22,3 +22,5 @@ routes.get("/healthcheck", (req, res) => {
 
 
 module.exports = routes;
+
+

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuotesService } from '../quotes.service';
-
 import { FormControl } from '@angular/forms';
+import { LibraryService} from '../library.service';
 
 @Component({
   selector: 'app-landing',
@@ -12,12 +12,18 @@ import { FormControl } from '@angular/forms';
 })
 export class LandingComponent implements OnInit {
   quotes: any [] = [];
+  public readername: string = '';
 
-  constructor(public QuotesService: QuotesService) {}
+  constructor(public QuotesService: QuotesService, public library: LibraryService) {}
 
   ngOnInit(): void {
     this.QuotesService.getQuotes();
   }
+  setreadername(){
+    this.library.readername=this.readername;
+    console.log (this.library.readername);
+  }
+  
 }
   // goToSearchPage(SearchComponent) {
   //   window.open(url, "_blank");
