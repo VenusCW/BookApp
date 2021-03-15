@@ -11,7 +11,17 @@ import { ExistingLibraryComponent } from './existing-library/existing-library.co
 import { AddLibraryComponent } from './add-library/add-library.component';
 import {LandingComponent} from './landing/landing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { LibraryFormComponent } from './library-form/library-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -21,13 +31,16 @@ import { NavigationComponent } from './navigation/navigation.component';
     AddLibraryComponent,
     LandingComponent,
     NotFoundComponent,
-    NavigationComponent
+    MainNavComponent,
+    LibraryFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    MatSliderModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
