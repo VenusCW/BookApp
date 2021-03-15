@@ -1,19 +1,18 @@
 <body>
-<h1><p>If you’re always trying to be normal
-  <br>
-  you will never know how amazing you can be.
-<br>
-  ~MAYA ANGELOU~</p></h1>
-<div class= "nameBox">
-<input type="text" style="color: #fff;font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight:bold;font-size:12px; background-color:#e15fec"size="10" maxlength="30" placeholder= "Enter Name"/>
-</div>
-<div class = "readButton">
+  <!-- <h1>Welcome</h1> -->
+  <!-- <div *ngFor="let quote of QuotesService.quotes">{{ quote.content }}</div> -->
+  <h1>{{ this.QuotesService.quotes }}</h1>
 
-    <a routerLink ="/">
-      <button class= "read"><p>Let's Read!!</p></button></a>
+  <p>  {{readername}} </p>
+  <div class="nameBox">
+    <input     
+      type ="text" 
+      [(ngModel)] ="readername" 
+      placeholder="Enter name"  />
 
-<!-- <a href=C:\Users\mzve5\OneDrive\Documents\GrandCircus\BookApp\BookApp\src\app\search\search.component.html type= "Submit"><button>Let's Read! -->
-  <!-- <p>Let's Read!!</p> -->
-<!-- </button></a> -->
-</div>
+  
+  </div>
+
+  <a routerLink="/search" class="read" (click)="setreadername()">Let's Read!</a>
+
 </body>

@@ -1,3 +1,9 @@
+h2 {
+  font-family: 'Homemade Apple', cursive;
+  text-align: center;
+  font-size: large;
+  /* margin-top: 15px;  */
+}
 #preview {
   text-decoration: underline;
   color: blue;
@@ -6,4 +12,52 @@ a:hover {
   text-decoration: none;
   background-color: yellow;
   font-size: larger;
+}
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 4vh;
+}
+.search {
+  width: 70vw;
+  margin-right: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-style: italic;
+  font-size: medium;
+  padding: none;
+}
+.getBooks {
+  height: 2vh;
+  margin-top: 9px;
+  
+}
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 10px;
+}
+#bookcover {
+  grid-column: 1;
+  grid-row: auto;
+}
+#details {
+  grid-column: 2;
+  grid-row: 1;
+}
+@media only screen and (min-width: 768px) {
+  .results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px dotted black;
+    margin: 10px;
+    justify-content: center;
+    border-radius: 15px;
+  }
 }

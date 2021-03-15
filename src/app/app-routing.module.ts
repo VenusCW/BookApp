@@ -9,10 +9,10 @@ import {LandingComponent} from './landing/landing.component';
 
 const routes: Routes = [
 
-  {path: "", component: SearchComponent},
+  {path: "", component: LandingComponent},
   {path: "add-library", component: AddLibraryComponent},
   {path: "existing-library", component: ExistingLibraryComponent},
-  {path: "landing", component: LandingComponent},
+  {path: "search", component: SearchComponent},
   { path: '**', component: NotFoundComponent },
 
 ];

@@ -2,22 +2,48 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface Response {
-  results: string;
+  author: string;
+  content: string;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuotesService {
-  url =
-    'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
-  apiKey = '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc';
-  // public quotes: any[] = [];
-  //  randomQuotes: Response[] = [];
+  url = 'https://api.quotable.io/random'
+  quotes: any [] = [];
+//   url =
+//     'https://quotes-by-quovoo1.p.rapidapi.com/quotes/random?endpoint=apiendpoint_randomQuote';
+//   apiKey = 'a3d1706666mshc943102fd80ee9fp1c372fjsnce84b77ed0b2';
+//   quotes: any[] = [];
+//   // randomQuotes: Response[] = [];
   constructor(private http: HttpClient) {}
 
   getQuotes() {
-    const apiUrl= 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote'
+    const requestURL = this.url;
+    this.http.get(requestURL).subscribe(
+      (response:any) => {
+        this.quotes = response.content;
+      }
+    )
+  }
+//   getQuotes() {
+//     const requestURL = this.getUrlWithApiKey() + '?q=';
+
+//     this.http.get(requestURL).subscribe(
+//       (response: any) => {
+//         console.log(response);
+//         this.quotes = response.item;
+
+  // url =
+  //   'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
+  // apiKey = '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc';
+  // // public quotes: any[] = [];
+  // //  randomQuotes: Response[] = [];
+  // constructor(private http: HttpClient) {}
+
+  // getQuotes() {
+  //   const apiUrl= 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote'
 //     const requestURL = this.getUrlWithApiKey();
 
 //     this.http.get(requestURL).subscribe(
@@ -31,13 +57,16 @@ export class QuotesService {
 //     );
 //   }
 //   getUrlWithApiKey() {
+//     return `${this.url}+?rapidapi-key=${this.apiKey}`;
+//   }
+// }
 //     return `${this.url}?api_key=${this.apiKey}&language=en-US`;
 //   }
 // }
-this.getQuotes();
-  return this.http.get(`$this.apiUrl}`);
-}
-}
+// this.getQuotes();
+//   return this.http.get(`$this.apiUrl}`);
+// }
+// }
 // const settings = {
 // 	"async": true,
 // 	"crossDomain": true,
@@ -92,3 +121,4 @@ this.getQuotes();
 
 //       console.log(body);
 //   });
+}

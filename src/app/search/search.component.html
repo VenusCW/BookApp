@@ -1,19 +1,28 @@
 <app-main-nav></app-main-nav>
 <!-- search input -->
-<h2 class="searchBooks">Search for Books</h2>
-<input
-  [(ngModel)]="generalSearch"
-  placeholder="Search for Books"
-  class="filter"
-/>
-<!-- <input [(ngModel)]="author" placeholder="search by author" /> -->
-<!-- <input [(ngModel)]="subjectSearch" placeholder="search by subject" /> -->
-<!-- <div onload="getNewBooks()"></div> -->
-<button (click)="getBooksList()">Search</button>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+
+<app-navigation></app-navigation>
+<h2 class="searchBooks">browse the stacks...</h2>
+<div class="filter">
+  <input
+    [(ngModel)]="generalSearch"
+    placeholder="Search for Books" class="search"
+  />
+  <!-- <input [(ngModel)]="author" placeholder="search by author" /> -->
+  <!-- <input [(ngModel)]="subjectSearch" placeholder="search by subject" /> -->
+  <!-- <div onload="getNewBooks()"></div> -->
+  <button (click)="getBooksList()" class="getBooks">search</button>
+</div>
 <!-- this could probably be a new component -->
 <div *ngFor="let book of BooksService.books" class="results">
   <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
-  <p>Title: {{ book.volumeInfo.title }}</p>
-  <p>Author: {{ book.volumeInfo.authors }}</p>
-  <a id="preview" (click)="goToLink(book.volumeInfo.previewLink)">Preview</a>
+  <div id="details">
+    <p>Title: {{ book.volumeInfo.title }}</p>
+    <p>Author: {{ book.volumeInfo.authors }}</p>
+    <a id="preview" (click)="goToLink(book.volumeInfo.previewLink)">Preview</a>
+    <button>Add to Library</button>
+  </div>
 </div>
+<!-- c -->
+<!--  -->

@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuotesService } from '../quotes.service';
-
 import { FormControl } from '@angular/forms';
+import { LibraryService} from '../library.service';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -10,15 +11,32 @@ import { FormControl } from '@angular/forms';
   providers: [QuotesService],
 })
 export class LandingComponent implements OnInit {
-  apiUrl ='https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
-  // quotes: any;
-  // queryField;
+  quotes: any [] = [];
+  public readername: string = '';
 
-  // getQuotes(): void {}
-  constructor(public quotesService:QuotesService) {}
+  constructor(public QuotesService: QuotesService, public library: LibraryService) {}
 
-ngOnInit(): void{}
+  ngOnInit(): void {
+    this.QuotesService.getQuotes();
+  }
+  setreadername(){
+    this.library.readername=this.readername;
+    console.log (this.library.readername);
+  }
+  
 }
+  // goToSearchPage(SearchComponent) {
+  //   window.open(url, "_blank");
+  // }
+//   apiUrl ='https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
+//   // quotes: any;
+//   // queryField;
+
+//   // getQuotes(): void {}
+//   constructor(public quotesService:QuotesService) {}
+
+// ngOnInit(): void{}
+// }
 //   const randomQuotes = require('request');
 
 // const options = {
