@@ -25,7 +25,7 @@ export class ExistingLibraryComponent implements OnInit {
  // }
 
   ngOnInit(): void {
-    this.LibraryService.getQuotes();
+  //  this.LibraryService.get();
   }
 
 }

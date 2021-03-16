@@ -9,12 +9,23 @@ interface Books {
   category: string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class LibraryService {
+  url = "/routes";
   public readername: string ='';
-  constructor() { }
+  constructor(private http: HttpClient) { 
+
+  }
+
+  getLibrary () { 
+    this.http.get(this.url + '?reader=' + this.readername).subscribe((response:any) => {
+      console.log (response);
+    });
+  };
+
 }
 
 
