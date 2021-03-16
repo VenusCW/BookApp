@@ -14,13 +14,15 @@ interface Books {
   providedIn: 'root'
 })
 export class LibraryService {
-  url = "/routes";
+  url = "http://localhost:3000/routes";
+  // url = "/routes"
   public readername: string ='';
-  constructor(private http: HttpClient) { 
+  public books:any[] = [];
+  constructor(private http: HttpClient) {
 
   }
 
-  getLibrary () { 
+  getLibrary() {
     this.http.get(this.url + '?reader=' + this.readername).subscribe((response:any) => {
       console.log (response);
     });
