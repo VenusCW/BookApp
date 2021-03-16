@@ -1,18 +1,26 @@
 <body>
   <!-- <h1>Welcome</h1> -->
   <!-- <div *ngFor="let quote of QuotesService.quotes">{{ quote.content }}</div> -->
-  <h1>{{ this.QuotesService.quotes }}</h1>
+  <h1>"{{ this.QuotesService.quotes }}"</h1>
 
-  <p>  {{readername}} </p>
+  <p>{{ readername }}</p>
   <div class="nameBox">
-    <input     
-      type ="text" 
-      [(ngModel)] ="readername" 
-      placeholder="Enter name"  />
-
-  
+    <input
+      type="text"
+      style="
+        color: #fff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        background-color: #e15fec;
+      "
+      size="10"
+      maxlength="30"
+      placeholder="Enter Name"
+    />
   </div>
 
-  <a routerLink="/search" class="read" (click)="setreadername()">Let's Read!</a>
+  <button routerLink="/search" class="read">Let's Read!</button>
 
+  <a routerLink="/search" class="read" (click)="setreadername()">Let's Read!</a>
 </body>
