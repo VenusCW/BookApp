@@ -7,8 +7,11 @@ const pool = require('./connection');
 
 routes.get("/routes", (req, res) => {
 
+    let readername = req.query.reader;
+
     pool.query('SELECT * FROM library WHERE name = $1', [readername]).then ((result) => {
         const books = result.rows;
+        console.log(books);
         res.json(books);
         res.status(200);
     });

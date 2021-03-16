@@ -8,7 +8,7 @@ import { LibraryService} from '../library.service';
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css'],
-  providers: [QuotesService],
+//  providers: [QuotesService], 
 })
 export class LandingComponent implements OnInit {
   quotes: any [] = [];
@@ -19,9 +19,14 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     this.QuotesService.getQuotes();
   }
+
   setreadername(){
+    
     this.library.readername=this.readername;
-    console.log (this.library.readername);
+    this.library.getLibrary();
+
+
+
   }
   
 }
