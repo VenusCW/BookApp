@@ -20,12 +20,12 @@ export class ExistingLibraryComponent implements OnInit {
  // getLibraryService(): void {
  //   this.LibraryService.getLibrary(
  //     this.readername,
-      
+
  //   );
  // }
 
   ngOnInit(): void {
-    this.LibraryService.getQuotes();
+    // this.LibraryService.getQuotes();
   }
 
 }
