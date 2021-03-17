@@ -1,10 +1,16 @@
 
 <h2>Create Your Library</h2>
 <p>Add existing books from your collection</p>
+<p [(ngModel)]="readername">Show me {{readername}}</p>
 <section class="form-container">
-<form>
-   
+<!-- <form> -->
+
 <!-- <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+        <mat-label>{{readername}}</mat-label>
+        <input matInput placeholder="">
+</mat-form-field>
+   
+<mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
         <mat-label>Book Title</mat-label>
         <input matInput placeholder="Enter Book Title">
 </mat-form-field>
@@ -18,6 +24,33 @@
     <mat-label>Genre</mat-label>
     <input matInput placeholder="Enter Genre">
 </mat-form-field> -->
+<label>
+    Name
+    <input [(ngModel)]="readername" id="name" name="name"/>
+  </label>
+  <label>
+    Status 
+    <input [(ngModel)]="status" id="status" name="status"/>
+  </label>
+  <label>
+    Title
+    <input [(ngModel)]="title" id="title" name="title"/>
+  </label>
+  <label>
+    Author
+    <input [(ngModel)]="author" id="author" name="author"/>
+  </label>
+  <label>
+    Category
+    <input [(ngModel)]="category" id="category" name="category" />
+  </label>
 
-</form>
+<button (click)="addBook()">Click Me</button>
+
+<p>{{readername}}</p>
+<p>{{status}}</p>
+<p>{{title}}</p>
+<p>{{author}}</p>
+<p>{{category}}</p>
+<!-- </form> -->
 </section>

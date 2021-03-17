@@ -28,7 +28,12 @@ export class LibraryService {
     });
   };
 
-}
+  addBook(newBook: any){
+    this.http.post(this.url + '/add-library', newBook).subscribe((response:any) => {
+      console.log (response);
+    });
+  }
+ }
 
 
 

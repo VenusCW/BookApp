@@ -27,6 +27,15 @@ routes.get("/routes", (req, res) => {
   }
 });
 
+routes.post("/routes/add-library", (req, res) =>{
+  let book = req.body;   
+  pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
+  [readername, book.status, book.title, book.author, book.category]).then((results) =>{
+        res.status(201).json(book)
+    }); 
+}); 
+
+
 routes.get("/healthcheck", (req, res) => {
 
   res.json('YAY');
