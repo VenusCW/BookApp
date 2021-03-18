@@ -31,6 +31,15 @@ export class LibraryFormComponent implements OnInit {
 
     this.library.addBook(newBook);
   }
+  // addFromSearch() {
+  //   const newSearchBook = {
+  //     readername: this.library.readername,
+  //     status: this.status,
+  //     title: this.title,
+  //     author: this.author,
+  //     category: this.category,
+  //   };
+  // }
 
   ngOnInit(): void {
       // this.library.setreadername();
