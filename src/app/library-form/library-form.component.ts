@@ -21,7 +21,7 @@ export class LibraryFormComponent implements OnInit {
   
   addBook(){
     const newBook ={
-    readername: this.readername, 
+    readername: this.library.readername, 
     status: this.status, 
     title: this.title,
     author: this.author, 

@@ -21,16 +21,16 @@ routes.get("/routes", (req, res) => {
     });
   } else {
     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
-    ['Benny','Read', 'The Stand', 'Stephen King', 'Thriller']).then((results) =>
+    ['Benny','Read', 'The Stand', 'Stephen King', 'Thriller']).then((result) =>
     {res.status(201).json(books)})
     // res.json("test")
   }
 });
 
-routes.post("/routes/add-library", (req, res) =>{
+routes.post("/routes", (req, res) =>{
   let book = req.body;   
   pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
-  [readername, book.status, book.title, book.author, book.category]).then((results) =>{
+  [readername, book.status, book.title, book.author, book.category]).then((result) =>{
         res.status(201).json(book)
     }); 
 }); 
