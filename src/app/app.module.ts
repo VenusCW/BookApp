@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { LibraryFormComponent } from './library-form/library-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AddToShelfComponent } from './add-to-shelf/add-to-shelf.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     LandingComponent,
     NotFoundComponent,
     MainNavComponent,
-    LibraryFormComponent
+    LibraryFormComponent,
+    AddToShelfComponent
   ],
   imports: [
     BrowserModule,

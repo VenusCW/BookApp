@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
-  providers: [BooksService],
+  // providers: [BooksService],
 })
 export class SearchComponent implements OnInit {
   books: any;
@@ -33,6 +33,7 @@ export class SearchComponent implements OnInit {
     window.open(url, "_blank");
   }
   addToLibrary(): void {
+
 
   }
 }

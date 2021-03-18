@@ -4,7 +4,6 @@ import { QuotesService } from '../quotes.service';
 import { FormControl } from '@angular/forms';
 import { LibraryService } from '../library.service';
 
-
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
