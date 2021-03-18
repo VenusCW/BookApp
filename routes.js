@@ -21,20 +21,49 @@ routes.get("/routes", (req, res) => {
     });
   } else {
     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
-    ['Benny','Read', 'The Stand', 'Stephen King', 'Thriller']).then((result) =>
-    {res.status(201).json(books)})
+      ['Benny', 'Read', 'The Stand', 'Stephen King', 'Thriller']).then((result) => { res.status(201).json(result.rows) })
     // res.json("test")
   }
 });
 
-routes.post("/routes", (req, res) =>{
+routes.post("/routes", (req, res) => {
   let book = req.body;
+
   console.log(req.body);
   pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
-  [book.readername, book.status, book.title, book.author, book.category]).then((result) =>{
-        res.status(201).json(book)
+    [book.readername, book.status, book.title, book.author, book.category]).then((result) => {
+      res.status(201).json(result.rows)
     });
 });
+
+//add a new .post with a different end point
+routes.post('/searchInput', (req, res) => {
+  let bookFromSearch = req.body;
+  console.log(bookFromSearch);
+  pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
+    [bookFromSearch.readername, bookFromSearch.status, bookFromSearch.title, bookFromSearch.author, bookFromSearch.category]).then
+    ((result) => {
+      const newBookDets = result.rows.map((result) => {
+        const newResult = result;
+        newResult[bookFromSearch.title] = result.title;
+        newResult[bookFromSearch.status] = result.status;
+        newResult[bookFromSearch.author] = result.author;
+
+        return newResult;
+      })
+      res.status(201).json(newBookDets);
+    })
+});
+
+// routes.post("/routes/from-search", (req, res) => {
+//   let book = req.body;
+//   console.log(req.body);
+//   pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
+//     [book.readername, book.status, book.title, book.author, book.category]).then((result) => {
+//       res.status(201).json(book)
+//     });
+// });
+
 
 
 routes.get("/healthcheck", (req, res) => {

@@ -28,9 +28,11 @@
       <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
       <p>Title: {{ book.volumeInfo.title }}</p>
       <p>Author: {{ book.volumeInfo.authors }}</p>
+      <p>Category: {{ book.volumeInfo.categories }}</p>
       <button id="preview" (click)="goToLink(book.volumeInfo.previewLink)">
         Preview
       </button>
-      <button (click)="addToLibrary()" id="add">Add to Library</button>
+      <button (click)="addFromSearch()" id="add">Add to Library</button>
     </div>
   </div>
+</body>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BooksService } from './books.service';
 
 interface Books {
   name: string;
@@ -17,7 +18,8 @@ export class LibraryService {
   // url = "/routes"
   public readername: string = '';
   public books: any[] = [];
-  constructor(private http: HttpClient) {}
+  public title: string = '';
+  constructor(private http: HttpClient, public BooksService: BooksService) {}
 
   getLibrary() {
     this.http
@@ -30,6 +32,13 @@ export class LibraryService {
   addBook(newBook: any) {
     console.log(newBook);
     this.http.post(this.url, newBook).subscribe((response: any) => {
+      console.log(response);
+    });
+  }
+
+  addFromSearch(newSearchBook: any) {
+    console.log(newSearchBook);
+    this.http.post(this.url, newSearchBook).subscribe((response: any) => {
       console.log(response);
     });
   }
