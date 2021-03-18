@@ -28,16 +28,10 @@ routes.get("/routes", (req, res) => {
 });
 
 routes.post("/routes", (req, res) =>{
-<<<<<<< HEAD
-  let book = req.body;   
-  pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
-  [readername, book.status, book.title, book.author, book.category]).then((result) =>{
-=======
   let book = req.body;
   console.log(req.body);
   pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
   [book.readername, book.status, book.title, book.author, book.category]).then((result) =>{
->>>>>>> master
         res.status(201).json(book)
     });
 });
