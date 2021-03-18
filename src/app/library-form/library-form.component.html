@@ -1,7 +1,7 @@
 
 <h2>Create Your Library</h2>
 <p>Add existing books from your collection</p>
-<p [(ngModel)]="readername">Show me {{readername}}</p>
+<p>Show me {{library.readername}}</p>
 <section class="form-container">
 <!-- <form> -->
 
@@ -9,7 +9,7 @@
         <mat-label>{{readername}}</mat-label>
         <input matInput placeholder="">
 </mat-form-field>
-   
+
 <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
         <mat-label>Book Title</mat-label>
         <input matInput placeholder="Enter Book Title">
@@ -24,12 +24,8 @@
     <mat-label>Genre</mat-label>
     <input matInput placeholder="Enter Genre">
 </mat-form-field> -->
-<label>
-    Name
-    <input [(ngModel)]="readername" id="name" name="name"/>
-  </label>
   <label>
-    Status 
+    Status
     <input [(ngModel)]="status" id="status" name="status"/>
   </label>
   <label>
