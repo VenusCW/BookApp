@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
 import { FormControl } from '@angular/forms';
 import { LibraryService } from '../library.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -17,7 +18,6 @@ export class SearchComponent implements OnInit {
   public subjectSearch: string = '';
   public title: string = '';
 
-
   getBooksList(): void {
     this.BooksService.getBooks(
       this.generalSearch
@@ -28,7 +28,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     public BooksService: BooksService,
-    public library: LibraryService
+    public library: LibraryService,
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -38,20 +39,22 @@ export class SearchComponent implements OnInit {
     window.open(url, '_blank');
   }
 
-// setBookDetails() {
-//     this.library.title = this.BooksService.volumeInfo.title;
-    // this.author = this.author;
-    // this.category = this.category;
-  // }
-  addFromSearch() {
+  setBookDetails() {
+      this.BooksService.title = this.title;
+      console.log(this.title);
+  // this.author = this.author;
+  // this.category = this.category;
+  }
+  addFromSearch(book:any) {
+    console.log(book);
     const newSearchBook = {
       readername: this.library.readername,
       status: 'Wishlist',
-      title: this.title,
-      // author: this.BooksService.author,
-      // category: this.BooksService.category,
+      title:  book.volumeInfo.title,
+      author: book.volumeInfo.authors[0],
+      category: book.volumeInfo.categories[0],
     };
-    console.log(this.title); 
+    console.log(newSearchBook.category);
     this.library.addFromSearch(newSearchBook);
   }
 }

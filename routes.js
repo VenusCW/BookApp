@@ -38,16 +38,16 @@ routes.post("/routes", (req, res) => {
 
 //add a new .post with a different end point
 routes.post('/searchInput', (req, res) => {
-  let bookFromSearch = req.body;
-  console.log(bookFromSearch);
+  let newSearchBook = req.body;
+  console.log(newSearchBook);
   pool.query(`INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)`,
-    [bookFromSearch.readername, bookFromSearch.status, bookFromSearch.title, bookFromSearch.author, bookFromSearch.category]).then
+    [newSearchBook.readername, newSearchBook.status, newSearchBook.title, newSearchBook.author, newSearchBook.category]).then
     ((result) => {
       const newBookDets = result.rows.map((result) => {
         const newResult = result;
-        newResult[bookFromSearch.title] = result.title;
-        newResult[bookFromSearch.status] = result.status;
-        newResult[bookFromSearch.author] = result.author;
+        newResult[newSearchBook.title] = result.title;
+        newResult[newSearchBook.status] = result.status;
+        newResult[newSearchBook.author] = result.author;
 
         return newResult;
       })
