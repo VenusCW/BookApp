@@ -1,0 +1,50 @@
+CATEGORY ONE: HTML/CSS
+1.
+What are some ways that you implemented responsive design?
+
+Responsive design Responsive Web design is the approach that suggests that design and development should respond to the user’s behavior and environment based on screen size, platform and orientation.
+
+Techniques: 
+Add responsive meta tags in your HTML document 
+Apply media queries to your layout 
+Make images and embedded videos responsive
+Ensure your typography will be easily readable on mobile devices. Is appearance readable?
+
+
+How do use media query for images?
+@media screen and (max-width:800px) { 
+    body { 
+        font-size:0.8em; 
+    }
+    img { 
+        width:300px; 
+    }
+}
+
+You can see in the landing.component.css that we designed for mobile first.  We used media queries to change layout as we increase screen width above 768px.
+
+
+
+2. Is your project using any CSS transitions or Angular animations?
+
+CSS Transitions
+
+3. Are there any imported fonts in this project? If so, what are they and how did you import and use them?
+
+Yes
+
+4. What different unit(s) of measurement are you using for your font sizes?
+
+5. What is the importance of the viewport meta tag? Specifically, why do we need this in our HTML?
+<metaname="viewport"content="width=device-width,initial-scale=1.0">
+The viewport is the user's visible area of a web page. It varies with the device - it will be smaller on a mobile phone than on a computer screen.
+You should include the following <meta> element in all your web pages:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+This gives the browser instructions on how to control the page's dimensions and scaling.
+The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+6. How are you defining your media queries? With min-width or max-width? What is the difference between the two?
+
+Min-width 
+Mobile design you design for cell phone size first.  Then if your screen is larger than a cell phone, you use your media query for the larger screen options.
+
