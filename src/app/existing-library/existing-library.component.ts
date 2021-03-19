@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BooksService } from '../books.service';
+import { FormControl } from '@angular/forms';
+import { LibraryService } from '../library.service';
+import { Router } from '@angular/router';
 
 
-interface Books {
+interface Book {
+  librarycard: number;
   name: string;
   status: string;
   title: string;
@@ -15,18 +20,17 @@ interface Books {
   styleUrls: ['./existing-library.component.css'],
 })
 export class ExistingLibraryComponent implements OnInit {
+  
+  public books : Book[] = [];
+  public readername: string = '';
 
-  constructor() { }
-
- // getLibraryService(): void {
- //   this.LibraryService.getLibrary(
- //     this.readername,
-
- //   );
- // }
+  constructor(
+    public library: LibraryService,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
-  //  this.LibraryService.get();
+    this.library.getLibrary();
   }
 
 }

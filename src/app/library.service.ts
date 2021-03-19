@@ -17,7 +17,7 @@ export class LibraryService {
   url = 'http://localhost:3000/routes';
   // url = "/routes"
   public readername: string = '';
-  public books: any[] = [];
+  public books: Books[] = [];
   public title: string = '';
   constructor(private http: HttpClient, public BooksService: BooksService) {}
 
@@ -25,9 +25,12 @@ export class LibraryService {
     this.http
       .get(this.url + '?reader=' + this.readername)
       .subscribe((response: any) => {
-        console.log(response);
-      });
-  }
+        
+           this.books = response;
+       });
+        
+      
+      }
 
   addBook(newBook: any) {
     console.log(newBook);
