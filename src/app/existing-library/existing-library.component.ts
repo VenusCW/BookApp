@@ -21,7 +21,7 @@ interface Book {
 })
 export class ExistingLibraryComponent implements OnInit {
 
-  public books : Book[] = [];
+  public books: Book[] = [];
   public readername: string = '';
 
   constructor(

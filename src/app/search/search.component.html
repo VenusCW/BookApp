@@ -23,13 +23,17 @@
     </button>
   </div>
 
-  <div id="details">
+  <div id="details-container">
     <div *ngFor="let book of BooksService.books" class="results">
-      <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
-      <p>Title: {{ book.volumeInfo.title }}</p>
-      <p>Author: {{ book.volumeInfo.authors }}</p>
-      <!-- if we want to make this optional wrap in an ngIf -->
-      <p>Category: {{ book.volumeInfo.categories }}</p>
+      <div class="img-container">
+        <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
+      </div>
+      <div class="dets">
+        <p>Title: {{ book.volumeInfo.title }}</p>
+        <p>Author: {{ book.volumeInfo.authors }}</p>
+        <!-- if we want to make this optional wrap in an ngIf -->
+        <p>Category: {{ book.volumeInfo.categories }}</p>
+      </div>
       <button id="preview" (click)="goToLink(book.volumeInfo.previewLink)">
         Preview
       </button>
