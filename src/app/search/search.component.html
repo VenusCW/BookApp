@@ -22,7 +22,7 @@
       <i class="fas fa-search"></i>
     </button>
   </div>
-  <!-- this could probably be a new component -->
+
   <div id="details">
     <div *ngFor="let book of BooksService.books" class="results">
       <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
@@ -33,9 +33,7 @@
       <button id="preview" (click)="goToLink(book.volumeInfo.previewLink)">
         Preview
       </button>
-      <button (click)="addFromSearch(book)" id="add">
-        Add to Library
-      </button>
+      <button (click)="addFromSearch(book)" id="add">Add to Library</button>
     </div>
   </div>
 </body>

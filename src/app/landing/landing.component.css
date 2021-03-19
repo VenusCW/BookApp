@@ -1,50 +1,78 @@
-body{
-  border-radius:30px 30px 30px 30px;
+* {
+  box-sizing: border-box;
+}
+body {
+  /* border-radius: 30px 30px 30px 30px; */
   /* position: absolute;
   top: 80px; */
   text-align: center;
+  background-image: url("src/assets/1365645.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  /* background-color: rgb(77, 11, 121); */
   /* margin:0;
   width: 100vw;
   min-height: 100vh; */
-  background:linear-gradient(#A40606, #886d51);
-}
-h1{
-  display: flex;
-  text-align: center;
-  color:rgb(235, 208, 174);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  /* margin-top: 65px; */
-  padding: 50px;
-  align-items:center;
-
+  /* background: linear-gradient(#a40606, #886d51); */
 }
 
+.quoteBox {
+  font-family: "Homemade Apple", cursive;
+  text-shadow: 3px 2px 1px black;
+  background-color: rgba(7, 7, 7, 0.308);
+  padding: 1em;
+  color: white;
+  align-items: center;
+  /* border: 1px solid rgba(0, 0, 0, 0.774);
+  border-radius: 10px; */
+}
 
 @media (min-width: 768px) {
-  body{
-  border-radius:30px 30px 30px 30px;
-  /* position: absolute;
+  body {
+    border-radius: 30px 30px 30px 30px;
+    /* position: absolute;
   top: 80px;
   left:80px; */
-  margin: auto;
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(#ffa69e, #861657);
+  }
+}
+.read {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  border: none;
+  border-radius: 5px;
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 100vw;
-  min-height: 100vh;
-  background:linear-gradient(#FFA69E,#861657 );
-
+  line-height: 1.1;
+  transition: 220ms all ease-in-out;
 }
+.read:hover,
+:active {
+  background-color: darkslategray;
+  color: white;
+  font-size: medium;
 }
-.read{
-  background-color:#942569;
-  border: 2px solid #886d51;
-  border-radius: 50%;
-  width:fit-content;
-  padding-top: 25px;
-  /* text-align: center; */
+.read:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px black;
 }
-.nameBox{
-  margin-bottom: 15px;
-  padding-top: 50px;
+.nameBox {
+  width: auto;
+  padding: 0.5em;
+  margin: 0.5em;
   text-align: center;
 }
-

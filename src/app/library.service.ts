@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BooksService } from './books.service';
 
 interface Books {
+  librarycard: number;
   name: string;
   status: string;
   title: string;
@@ -25,6 +26,7 @@ export class LibraryService {
     this.http
       .get(this.url + '?reader=' + this.readername)
       .subscribe((response: any) => {
+        this.books = response;
         console.log(response);
       });
   }

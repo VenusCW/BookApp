@@ -19,11 +19,12 @@ routes.get("/routes", (req, res) => {
       console.log(books);
       res.status(200).json(books);
     });
-  } else {
-    pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
-      ['Benny', 'Read', 'The Stand', 'Stephen King', 'Thriller']).then((result) => { res.status(201).json(result.rows) })
-    // res.json("test")
-  }
+//   } else {
+//     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
+//       [readername, status, 'The Stand', 'Stephen King', 'Thriller']).then((result) => { res.status(201).json(result.rows) })
+//     // res.json("test")
+//   }
+};
 });
 
 routes.post("/routes", (req, res) => {

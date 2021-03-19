@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LibraryService } from '../library.service';
 
 
 interface Books {
+  librarycard: number;
   name: string;
   status: string;
   title: string;
@@ -15,19 +18,17 @@ interface Books {
   styleUrls: ['./existing-library.component.css'],
 })
 export class ExistingLibraryComponent implements OnInit {
+  library: any = [];
+  constructor(public LibraryService: LibraryService, public router: Router) {}
 
-  constructor() { }
+  // getLibraryService(): void {
+  //   this.LibraryService.getLibrary(
+  //     this.readername,
 
- // getLibraryService(): void {
- //   this.LibraryService.getLibrary(
- //     this.readername,
+  //   );
+  // }
 
- //   );
- // }
-
-  ngOnInit(): void {
-  //  this.LibraryService.get();
+  ngOnInit(){
+    this.library.getLibrary(); 
   }
-
 }
-
