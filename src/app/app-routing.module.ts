@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: 'add-library', component: AddLibraryComponent },
   { path: 'existing-library', component: ExistingLibraryComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent },
   { path: 'library-form', component: LibraryFormComponent },
-  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({

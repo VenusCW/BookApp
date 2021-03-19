@@ -56,9 +56,9 @@ body.background {
 .results {
   /* border: 1px solid rgba(5, 5, 5, 0.753); */
   border-radius: 10px;
-  background-color: rgba(158, 123, 6, 0.753);
+  background-color: rgb(243, 242, 237);
   justify-items: center;
-  color: white;
+  color: black;
   box-shadow: 0px 6px 10px black ;
 }
 .img-container {
@@ -73,7 +73,10 @@ body.background {
   flex-direction: column;
   padding: 0%;
 }
-
+.prv-btn {
+  background-color: transparent;
+  border: none;
+}
 @media only screen and (min-width: 768px) {
   .results {
     /* display: flex; */

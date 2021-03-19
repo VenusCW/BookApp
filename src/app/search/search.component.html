@@ -35,7 +35,9 @@
         <p>Category: {{ book.volumeInfo.categories }}</p>
       </div>
       <button id="preview" (click)="goToLink(book.volumeInfo.previewLink)">
-        Preview
+        <img class="prv-btn"
+          src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.png"
+        />
       </button>
       <button (click)="addFromSearch(book)" id="add">Add to Library</button>
     </div>
