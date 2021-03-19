@@ -40,17 +40,17 @@ export class SearchComponent implements OnInit {
   }
 
   setBookDetails() {
-      this.BooksService.title = this.title;
-      console.log(this.title);
-  // this.author = this.author;
-  // this.category = this.category;
+    this.BooksService.title = this.title;
+    console.log(this.title);
+    // this.author = this.author;
+    // this.category = this.category;
   }
-  addFromSearch(book:any) {
+  addFromSearch(book: any) {
     console.log(book);
     const newSearchBook = {
       readername: this.library.readername,
       status: 'Wishlist',
-      title:  book.volumeInfo.title,
+      title: book.volumeInfo.title,
       author: book.volumeInfo.authors[0],
       category: book.volumeInfo.categories[0],
     };

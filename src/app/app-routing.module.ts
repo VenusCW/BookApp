@@ -6,6 +6,7 @@ import { AddLibraryComponent } from './add-library/add-library.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LandingComponent } from './landing/landing.component';
 import { LibraryFormComponent } from './library-form/library-form.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: '**', component: NotFoundComponent },
   { path: 'library-form', component: LibraryFormComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
