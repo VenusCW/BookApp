@@ -40,9 +40,10 @@ export class BooksService {
       );
     }
   }
-  // setBookDetails() {
-  //   this.title = this.title;
-  //   this.author = this.author;
-  //   this.category = this.category;
-  // }
+  
+  setBookDetails() {
+    this.title = this.title;
+    this.author = this.author;
+    this.category = this.category;
+  }
 }
