@@ -28,11 +28,14 @@
       <img id="bookCover" [src]="book.volumeInfo.imageLinks.thumbnail" />
       <p>Title: {{ book.volumeInfo.title }}</p>
       <p>Author: {{ book.volumeInfo.authors }}</p>
+      <!-- if we want to make this optional wrap in an ngIf -->
       <p>Category: {{ book.volumeInfo.categories }}</p>
       <button id="preview" (click)="goToLink(book.volumeInfo.previewLink)">
         Preview
       </button>
-      <button (click)="addFromSearch()" id="add">Add to Library</button>
+      <button (click)="addFromSearch(book)" id="add">
+        Add to Library
+      </button>
     </div>
   </div>
 </body>
