@@ -22,17 +22,23 @@ export class BooksService {
   public author: string = '';
   public category: string = '';
 
-
   constructor(private http: HttpClient) {}
- 
 
   //search by string only, add maxReturn
   // authors: string, subject: string ; + '&maxResults=30' --> took these out to test returned results
-  getBooks(search: string, author: string) {
+  getBooks(search: string, author: string, subject: string) {
     console.log(search);
     {
       const requestUrl =
-        this.url + '?q=' + search + 'inauthor:' + author + '&orderBy=relevance' + '&key=' + this.key;
+        this.url +
+        '?q=' +
+        search +
+        '+inauthor:' +
+        author +
+        '+subject:' +
+        subject +
+        '&key=' +
+        this.key;
 
       this.http.get(requestUrl).subscribe(
         (response: any) => {

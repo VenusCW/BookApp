@@ -15,15 +15,15 @@ export class SearchComponent implements OnInit {
   // queryField: FormControl = new FormControl();
   public generalSearch: string = '';
   public author: string = '';
-  public subjectSearch: string = '';
+  public subject: string = '';
   public title: string = '';
   public show: boolean = false;
 
   getBooksList(): void {
     this.BooksService.getBooks(
       this.generalSearch,
-      this.author
-      // this.subjectSearch
+      this.author,
+      this.subject
     );
   }
 

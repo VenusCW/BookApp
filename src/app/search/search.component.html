@@ -21,8 +21,8 @@
     <div class="advanced-search">
       <button (click)="toggle()" class="adv-btn" *ngIf="!show">advanced search</button>
       <div *ngIf="show" class="more-inputs">
-        <input class="adv-input" placeholder="search by author" />
-        <input class="adv-input" placeholder="search by subject" />
+        <input [(ngModel)]="author" class="adv-input" placeholder="search by author" />
+        <input [(ngModel)]="subject" class="adv-input" placeholder="search by subject" />
       </div>
       <button
         *ngIf="show"
