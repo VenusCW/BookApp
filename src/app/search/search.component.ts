@@ -17,11 +17,12 @@ export class SearchComponent implements OnInit {
   public author: string = '';
   public subjectSearch: string = '';
   public title: string = '';
+  public show: boolean = false;
 
   getBooksList(): void {
     this.BooksService.getBooks(
-      this.generalSearch
-      // this.author,
+      this.generalSearch,
+      this.author
       // this.subjectSearch
     );
   }
@@ -34,6 +35,9 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     // this.BooksService.getBooks();
+  }
+  toggle() {
+    this.show = !this.show;
   }
   goToLink(url: string) {
     window.open(url, '_blank');

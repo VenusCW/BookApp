@@ -1,13 +1,15 @@
-
-<app-library-form></app-library-form>
+<app-main-nav></app-main-nav>
 
 <p>Existing Library</p>
 
-<div *ngFor='let library of library.books'>
-    <p> {{ library.title }} </p>
-    <p> {{ library.author }}</p>
-
-</div>
-
-
-
+<mat-list>
+  <div mat-subheader class="booksList">My Books</div>
+  <mat-list-item *ngFor="let library of library.books">
+    <mat-icon mat-list-icon>book</mat-icon>
+    <div mat-line>{{ library.title }}</div>
+    <div mat-line>{{ library.author }}</div>
+    <div mat-line>{{ library.status }}</div>
+  </mat-list-item>
+</mat-list>
+<mat-divider></mat-divider>
+<app-library-form></app-library-form>

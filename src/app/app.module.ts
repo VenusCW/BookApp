@@ -53,6 +53,7 @@ import { AboutComponent } from './about/about.component';
     MatListModule,
     MatFormFieldModule,
     MatCardModule,
+    MatListModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent],
