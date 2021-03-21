@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+header {
+    /* border-radius: 30px 30px 30px 30px; */
+    /* position: absolute;
+    top: 80px; */
+    
+    background-image: url("src/assets/bookshelf.jpeg");
+    
+    background-position: center;
+    /* background-color: rgb(77, 11, 121); */
+    /* margin:0;
+    width: 100vw;
+    min-height: 100vh; */
+    /* background: linear-gradient(#a40606, #886d51); */
+  }
