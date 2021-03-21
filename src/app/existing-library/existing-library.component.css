@@ -3,14 +3,20 @@
   }
 
 body {
-    background-color: burlywood;
+    
+    background-image: url("src/assets/parchment.jpeg");
 }
+
+img {
+    max-width: 100%;
+}
+
 header {
     /* border-radius: 30px 30px 30px 30px; */
     /* position: absolute;
     top: 80px; */
     
-    background-image: url("src/assets/bookshelf.jpeg");
+   
     
     background-position: center;
     /* background-color: rgb(77, 11, 121); */
