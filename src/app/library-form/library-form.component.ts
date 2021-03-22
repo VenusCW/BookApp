@@ -16,7 +16,7 @@ export class LibraryFormComponent implements OnInit {
   public author: string= "";
   public category: string= "";
 
-  constructor(public library: LibraryService, public form: FormBuilder, public router: Router) {
+  constructor(public library: LibraryService, public router: Router) {
 
   }
 
