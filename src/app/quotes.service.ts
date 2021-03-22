@@ -12,11 +12,7 @@ interface Response {
 export class QuotesService {
   url = 'https://api.quotable.io/random'
   quotes: any [] = [];
-//   url =
-//     'https://quotes-by-quovoo1.p.rapidapi.com/quotes/random?endpoint=apiendpoint_randomQuote';
-//   apiKey = 'a3d1706666mshc943102fd80ee9fp1c372fjsnce84b77ed0b2';
-//   quotes: any[] = [];
-//   // randomQuotes: Response[] = [];
+  author: string = "";
   constructor(private http: HttpClient) {}
 
   getQuotes() {
@@ -24,6 +20,7 @@ export class QuotesService {
     this.http.get(requestURL).subscribe(
       (response:any) => {
         this.quotes = response.content;
+        this.author = response.author; 
       }
     )
   }

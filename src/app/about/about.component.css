@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url("src/assets/books_library_shelves_138556_800x1420.jpeg");
+  font-family: "Homemade Apple", cursive;
+  padding: 0;
+}
+h1 {
+  background: rgba(255, 255, 255, 0.808);
+  font-family: "Homemade Apple", cursive;
+  font-weight: 800;
+  text-align: center;
+  padding-top: 10px;
+  height: 5vh;
+}
+h2 {
+  text-align: center;
+}
+.about {
+  background: rgba(255, 255, 255, 0.808);
+  font-family: 'Roboto';
+  font-weight: 800;
+  text-align: justify;
+  padding: 15px;
+}
+footer {
+  background: black;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 800;
+  text-align: center;
+}
+

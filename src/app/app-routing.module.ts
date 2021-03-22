@@ -6,12 +6,14 @@ import { AddLibraryComponent } from './add-library/add-library.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LandingComponent } from './landing/landing.component';
 import { LibraryFormComponent } from './library-form/library-form.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'add-library', component: AddLibraryComponent },
   { path: 'existing-library', component: ExistingLibraryComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent },
   { path: 'library-form', component: LibraryFormComponent },
 ];

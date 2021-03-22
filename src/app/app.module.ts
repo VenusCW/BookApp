@@ -20,9 +20,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { LibraryFormComponent } from './library-form/library-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BooksService } from './books.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { BooksService } from './books.service';
     NotFoundComponent,
     MainNavComponent,
     LibraryFormComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,8 @@ import { BooksService } from './books.service';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent],
