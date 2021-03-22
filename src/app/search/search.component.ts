@@ -15,14 +15,15 @@ export class SearchComponent implements OnInit {
   // queryField: FormControl = new FormControl();
   public generalSearch: string = '';
   public author: string = '';
-  public subjectSearch: string = '';
+  public subject: string = '';
   public title: string = '';
+  public show: boolean = false;
 
   getBooksList(): void {
     this.BooksService.getBooks(
-      this.generalSearch
-      // this.author,
-      // this.subjectSearch
+      this.generalSearch,
+      this.author,
+      this.subject
     );
   }
 
@@ -35,22 +36,25 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     // this.BooksService.getBooks();
   }
+  toggle() {
+    this.show = !this.show;
+  }
   goToLink(url: string) {
     window.open(url, '_blank');
   }
 
   setBookDetails() {
-      this.BooksService.title = this.title;
-      console.log(this.title);
-  // this.author = this.author;
-  // this.category = this.category;
+    this.BooksService.title = this.title;
+    console.log(this.title);
+    // this.author = this.author;
+    // this.category = this.category;
   }
-  addFromSearch(book:any) {
+  addFromSearch(book: any) {
     console.log(book);
     const newSearchBook = {
       readername: this.library.readername,
       status: 'Wishlist',
-      title:  book.volumeInfo.title,
+      title: book.volumeInfo.title,
       author: book.volumeInfo.authors[0],
       category: book.volumeInfo.categories[0],
     };

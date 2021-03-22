@@ -26,11 +26,19 @@ export class BooksService {
 
   //search by string only, add maxReturn
   // authors: string, subject: string ; + '&maxResults=30' --> took these out to test returned results
-  getBooks(search: string) {
+  getBooks(search: string, author: string, subject: string) {
     console.log(search);
     {
       const requestUrl =
-        this.url + '?q=' + search + '&orderBy=newest' + '&key=' + this.key;
+        this.url +
+        '?q=' +
+        search +
+        '+inauthor:' +
+        author +
+        '+subject:' +
+        subject +
+        '&key=' +
+        this.key;
 
       this.http.get(requestUrl).subscribe(
         (response: any) => {
@@ -39,11 +47,5 @@ export class BooksService {
         (error) => console.log(error)
       );
     }
-  }
-  
-  setBookDetails() {
-    this.title = this.title;
-    this.author = this.author;
-    this.category = this.category;
   }
 }

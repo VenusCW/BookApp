@@ -1,21 +1,19 @@
+<app-main-nav></app-main-nav>
+<body>
+<div class="header">
+<img src="assets/bookshelf.jpeg">
+</div>
+<p>Existing Library</p>
+
+<mat-list>
+  <div mat-subheader class="booksList">My Books</div>
+  <mat-list-item *ngFor="let library of library.books">
+    <mat-icon mat-list-icon>book</mat-icon>
+    <div mat-line>{{ library.title }}</div>
+    <div mat-line>{{ library.author }}</div>
+    <div mat-line>{{ library.status }}</div>
+  </mat-list-item>
+</mat-list>
+<mat-divider></mat-divider>
 <app-library-form></app-library-form>
-<!-- <p>{{readername}}'s Library</p> -->
-
-
-
-<!-- if (readername) {
-
-    pool.query('SELECT * FROM library WHERE name = $1', [readername]).then ( (results) => {
-        const items = results.rows;
-        res.json(items);
-        res.status(200);
-    }
-
-    else
-{
-
-  res.json(You have no books!  Go to Search to add a book.);
-
-)}
-
--->
+</body>
