@@ -47,7 +47,7 @@ h1 {
   justify-content: center;
   text-align: center;
   line-height: 1.1;
-  transition: 220ms all ease-in-out;
+  transition: all 220ms ease-in-out;
 }
 .read:hover,
 :active {

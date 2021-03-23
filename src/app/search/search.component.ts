@@ -22,11 +22,15 @@ export class SearchComponent implements OnInit {
   getBooksList(): void {
     this.BooksService.getBooks(
       this.generalSearch,
+    );
+  }
+  getAdvBooksList(): void {
+    this.BooksService.getAdvBooks(
+      this.generalSearch,
       this.author,
       this.subject
     );
   }
-
   constructor(
     public BooksService: BooksService,
     public library: LibraryService,

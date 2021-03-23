@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 This is a test
+
+/connection.js
+
 # compiled output
 /dist
 /tmp
@@ -8,7 +11,7 @@ This is a test
 /bazel-out
 
 # dependencies
-.env
+/.env
 /node_modules
 
 # profiling files
