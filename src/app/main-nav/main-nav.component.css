@@ -1,6 +1,6 @@
-.sidenav-container {
+/* .sidenav-container {
   height: 10%;
-}
+} */
 
 .sidenav {
   width: 200px;
@@ -16,27 +16,25 @@
   z-index: 1;
 }
 
-.hidden{
-  display: none; 
+.hidden {
+  display: none;
 }
 
 @media (min-width: 700px) {
+  .sidenav {
+    display: none;
+  }
 
-.sidenav{
-  display: none; 
-}
+  .spacer {
+    flex: 1 1 auto;
+  }
 
-.spacer {
-  flex: 1 1 auto;  
-}
+  a {
+    color: white;
+    padding: 20px;
+  }
 
-a{
-  color: white; 
-  padding: 20px;  
-}
-
-.hidden{
-  display: block; 
-}
-
+  .hidden {
+    display: block;
+  }
 }
