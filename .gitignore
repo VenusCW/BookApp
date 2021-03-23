@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+/connection.js
+
 # compiled output
 /dist
 /tmp
@@ -8,7 +10,7 @@
 /bazel-out
 
 # dependencies
-.env
+/.env
 /node_modules
 
 # profiling files
