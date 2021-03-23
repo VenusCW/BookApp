@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExistingLibraryComponent } from './existing-library/existing-library.component';
-import { AddLibraryComponent } from './add-library/add-library.component';
 import { LandingComponent } from './landing/landing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +30,6 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     SearchComponent,
     ExistingLibraryComponent,
-    AddLibraryComponent,
     LandingComponent,
     NotFoundComponent,
     MainNavComponent,
@@ -53,7 +51,7 @@ import { AboutComponent } from './about/about.component';
     MatListModule,
     MatFormFieldModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [BooksService],
   bootstrap: [AppComponent],
