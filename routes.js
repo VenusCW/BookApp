@@ -17,6 +17,7 @@ routes.get("/routes", (req, res) => {
     pool.query('SELECT * FROM library WHERE name = $1', [readername]).then((result) => {
       const books = result.rows;
       console.log(books);
+      res.send('routes'); 
       res.status(200).json(books);
     });
 //   } else {
