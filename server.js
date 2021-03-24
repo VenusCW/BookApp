@@ -12,6 +12,10 @@ app.use("/", routes);
 
 app.use(express.static(__dirname + "/public"));
 
+app.get('/search', (req, res) => {
+  res.send('search');
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Listening on port: ${port}.`));
