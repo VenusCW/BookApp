@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ExistingLibraryComponent } from './existing-library/existing-library.component';
-import { AddLibraryComponent } from './add-library/add-library.component';
 import { LandingComponent } from './landing/landing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';  
 import { LibraryFormComponent } from './library-form/library-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BooksService } from './books.service';
@@ -31,7 +33,6 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     SearchComponent,
     ExistingLibraryComponent,
-    AddLibraryComponent,
     LandingComponent,
     NotFoundComponent,
     MainNavComponent,
@@ -53,7 +54,10 @@ import { AboutComponent } from './about/about.component';
     MatListModule,
     MatFormFieldModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    MatSelectModule, 
+    ReactiveFormsModule,  
   ],
   providers: [BooksService],
   bootstrap: [AppComponent],

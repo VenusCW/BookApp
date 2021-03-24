@@ -1,19 +1,18 @@
 <app-main-nav></app-main-nav>
 <body>
-<div class="header">
-<img src="assets/bookshelf.jpeg">
-</div>
-<p>Existing Library</p>
+  <div class="header">
+    <img src="assets/bookshelf.jpeg" />
+  </div>
 
-<mat-list>
-  <div mat-subheader class="booksList">My Books</div>
-  <mat-list-item *ngFor="let library of library.books">
-    <mat-icon mat-list-icon>book</mat-icon>
-    <div mat-line>{{ library.title }}</div>
-    <div mat-line>{{ library.author }}</div>
-    <div mat-line>{{ library.status }}</div>
-  </mat-list-item>
-</mat-list>
-<mat-divider></mat-divider>
-<app-library-form></app-library-form>
+  <mat-list>
+    <div mat-subheader class="booksList">My Books</div>
+    <mat-list-item *ngFor="let library of library.books">
+      <mat-icon mat-list-icon>book</mat-icon>
+      <div mat-line>{{ library.title }}</div>
+      <div mat-line>{{ library.author }}</div>
+      <div mat-line>{{ library.status }}</div>
+    </mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <app-library-form></app-library-form>
 </body>

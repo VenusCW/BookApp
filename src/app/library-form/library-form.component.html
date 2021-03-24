@@ -1,52 +1,47 @@
-
 <h2>Create Your Library</h2>
 <p>Add existing books from your collection</p>
-<p>Show me {{library.readername}}</p>
-<section class="form-container">
-<!-- <form> -->
 
-<!-- <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-        <mat-label>{{readername}}</mat-label>
-        <input matInput placeholder="">
+<section class="container">
+<mat-form-field  class=“example-form-field”>
+  <mat-label>Book Title</mat-label>
+  <input id="title" name="title" matInput type="text" required aria-required="false" 
+  [formControl]="bookTitle">
+  <mat-error *ngIf="bookTitle.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>
 
-<mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-        <mat-label>Book Title</mat-label>
-        <input matInput placeholder="Enter Book Title">
+<mat-form-field  class=“example-form-field”>
+  <mat-label>Book Author</mat-label>
+  <input [(ngModel)]="author" id="author" name="author" matInput type="text">
 </mat-form-field>
 
-<mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-    <mat-label>Author</mat-label>
-    <input matInput placeholder="Enter Author">
-</mat-form-field>
+<!-- <mat-form-field  class=“example-form-field”>
+    <mat-label>Book Category</mat-label>
+    <input [(ngModel)]="category" id="category" name="category" matInput type="text">
+  </mat-form-field> -->
 
-<mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-    <mat-label>Genre</mat-label>
-    <input matInput placeholder="Enter Genre">
-</mat-form-field> -->
-  <label>
-    Status
-    <input [(ngModel)]="status" id="status" name="status"/>
-  </label>
-  <label>
-    Title
-    <input [(ngModel)]="title" id="title" name="title"/>
-  </label>
-  <label>
-    Author
-    <input [(ngModel)]="author" id="author" name="author"/>
-  </label>
-  <label>
-    Category
-    <input [(ngModel)]="category" id="category" name="category" />
-  </label>
+  <mat-form-field >
+    <mat-label>Book Category</mat-label>
+    <mat-select [(ngModel)]="category" id="category" name="category">
+      <mat-option *ngFor="let cats of categories" [value]="cats.value">
+        {{cats.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<button (click)="addBook()">Click Me</button>
+<!-- <mat-form-field  class=“example-form-field”>
+    <mat-label>Book Status</mat-label>
+    <input [(ngModel)]="status" id="status" name="status" matInput type="text">
+  </mat-form-field> -->
 
-<!-- <p>{{readername}}</p>
-<p>{{status}}</p>
-<p>{{title}}</p>
-<p>{{author}}</p>
-<p>{{category}}</p>
-</form> -->
+  <mat-form-field >
+    <mat-label>Book Status</mat-label>
+    <mat-select [(ngModel)]="status" id="status" name="status">
+      <mat-option *ngFor="let stats of bookStatus" [value]="stats.value">
+        {{stats.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> 
 </section>
+
+<button mat-raised-button (click)="addBook()" color="primary" type="submit">Submit</button>
+
