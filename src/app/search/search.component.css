@@ -7,12 +7,12 @@
 body.background {
   margin: 0%;
   padding: 0%;
-    
-    background-image: url("src/assets/parchment.jpeg");
-    height: 100%;
-    background-repeat: no repeat;
-    background-position: center;
-    background-size: cover;
+
+  background-image: url("src/assets/parchment.jpeg");
+  height: 100%;
+  background-repeat: no repeat;
+  background-position: center;
+  background-size: cover;
 
   /* background-image: url(src/assets/pexels-pixabay-256453.jpg);
   background-position: center;
