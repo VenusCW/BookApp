@@ -20,6 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';  
 import { LibraryFormComponent } from './library-form/library-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BooksService } from './books.service';
@@ -52,6 +55,9 @@ import { AboutComponent } from './about/about.component';
     MatFormFieldModule,
     MatCardModule,
     MatListModule,
+    MatInputModule,
+    MatSelectModule, 
+    ReactiveFormsModule,  
   ],
   providers: [BooksService],
   bootstrap: [AppComponent],
