@@ -1,25 +1,27 @@
 <app-main-nav></app-main-nav>
 <body>
   <main class="main">
-    <div class="header">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/bookshelf.jpeg" />
-        <source media="(min-width: 769px)" srcset="assets/longbookshelf2.png" />
-      </picture>
-    </div>
+  <div class="header">
+     
+    <picture>
+      <source media="(max-width: 768px)" srcset="assets/bookshelf.jpeg">
+      <source media="(min-width: 769px)" srcset="assets/longbookshelf3.png">
+      <img src="assets/longbookshelf3.png"> 
+    </picture>
 
-    <mat-list>
-      <div mat-subheader class="booksList">My Books</div>
-      <mat-list-item *ngFor="let library of library.books">
-        <mat-icon mat-list-icon>book</mat-icon>
-        <mat-icon mat-list-icon><img src="assets/book.png" /></mat-icon>
-        <div mat-line>{{ library.title }}</div>
-        <div mat-line>{{ library.author }}</div>
-        <div mat-line>{{ library.status }}</div>
-        <button mat-icon-button (click)="delete()">DELETE</button>
-      </mat-list-item>
-    </mat-list>
-    <mat-divider></mat-divider>
-    <app-library-form></app-library-form>
-  </main>
+  </div>
+
+  <mat-list>
+    <div mat-subheader class="booksList">My Books</div>
+    <mat-list-item *ngFor="let library of library.books">
+      <mat-icon mat-list-icon>book</mat-icon> 
+      <div mat-line>{{ library.title }}</div>
+      <div mat-line>{{ library.author }}</div>
+      <div mat-line>{{ library.status }}</div>
+      <!-- <button mat-icon-button (click)='delete()'>DELETE</button> -->
+    </mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <app-library-form></app-library-form>
+</main>
 </body>
