@@ -17,7 +17,7 @@ export class BooksService {
   key = 'AIzaSyDg4C1YgpmGasG5b6RaoBMmMX-WWWxuzpM';
   url = 'https://www.googleapis.com/books/v1/volumes';
   books: any[] = [];
-  bookList: Response[] = [];
+  // bookList: Response[] = [];
   public title: string = '';
   public author: string = '';
   public category: string = '';

@@ -27,12 +27,10 @@ export class LibraryService {
     this.http
       .get(this.url + '?reader=' + this.readername)
       .subscribe((response: any) => {
-
-           this.books = response;
-       });
-
-
-      }
+        this.books = response;
+        console.log(response);
+      });
+  }
 
   addBook(newBook: any) {
     console.log(newBook);
@@ -48,10 +46,10 @@ export class LibraryService {
     });
   }
 
-//   deleteBook(librarycard: number) {
-//     this.http.delete(this.url + librarycard).subscribe((response:any) => {
-//       this.getLibrary();
-//       console.log(response);
-//     })
-//   }
+  //   deleteBook(librarycard: number) {
+  //     this.http.delete(this.url + librarycard).subscribe((response:any) => {
+  //       this.getLibrary();
+  //       console.log(response);
+  //     })
+  //   }
 }
