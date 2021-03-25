@@ -58,12 +58,6 @@ routes.post('/searchInput', (req, res) => {
     })
 });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3282710fa90d06ea97d12bcc4f918ae492c51d6c
-
 routes.get("/healthcheck", (req, res) => {
 
   res.json('YAY');

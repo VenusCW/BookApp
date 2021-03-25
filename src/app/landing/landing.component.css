@@ -49,12 +49,7 @@ h1 {
   line-height: 1.1;
   transition: all 220ms ease-in-out;
 }
-.read:hover,
-:active {
-  background-color: darkslategray;
-  color: white;
-  font-size: medium;
-}
+
 .read:focus {
   outline-style: solid;
   outline-color: transparent;

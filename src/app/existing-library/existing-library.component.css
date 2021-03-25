@@ -30,3 +30,7 @@ header {
     min-height: 100vh; */
     /* background: linear-gradient(#a40606, #886d51); */
   }
+
+  .main{
+    background-image: url("src/assets/parchment.jpeg");
+  }
