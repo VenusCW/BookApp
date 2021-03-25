@@ -20,6 +20,12 @@
   display: none;
 }
 
+img{
+  width: 82px; 
+  height: 54px;
+  margin-top: 10px; 
+}
+
 @media (min-width: 700px) {
   .sidenav {
     display: none;
@@ -32,9 +38,16 @@
   a {
     color: white;
     padding: 20px;
+    text-underline-offset: 7px; 
   }
 
   .hidden {
     display: block;
+  }
+
+  img{
+    width: 90px; 
+    height: 64px;
+    margin-top: 10px; 
   }
 }

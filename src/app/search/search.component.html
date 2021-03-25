@@ -16,7 +16,7 @@
       placeholder="Search for Books"
       class="search"
     />
-    <button *ngIf="!show" (click)="getBooksList()" class="getBooks">
+    <button *ngIf="!show" (click)="getBooksList()" class="getBooks" aria-label="search">
       <i class="fas fa-search fa-2x"></i>
     </button>
   </div>

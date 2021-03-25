@@ -10,22 +10,29 @@
   <!-- </div> -->
 
   <!-- <p>{{ readername }}</p> -->
+ <!-- <img src="assets/Pocket-library-01.png"/> -->
+  <!-- <img src="assets/Pocket-library.svg"> -->
+  <img src="assets/Pocket-library.png" alt="">
+
   <div class="nameBox">
     <input
       type="text"
       [(ngModel)]="readername"
-      placeholder="type your name to enter the Pocket Library"
+      placeholder="Username"
       title="type your name to enter the Pocket Library"
     />
   </div>
-  <button
-    type="button"
-    routerLink="/search"
-    class="read"
-    (click)="setreadername()"
-  >
-    Let's Read!
-  </button>
+
+  <button 
+  mat-raised-button
+  color="primary"
+  type="button"
+  routerLink="/search"
+  class="read"
+  (click)="setreadername()"
+>
+  Let's Read!
+</button>
 </body>
 
 <!-- size="10" -->
