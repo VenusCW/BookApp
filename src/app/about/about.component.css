@@ -7,6 +7,9 @@ body {
   font-family: "Homemade Apple", cursive;
   padding: 0;
 }
+main {
+  background-image: url("src/assets/books_library_shelves_138556_800x1420.jpeg");
+}
 h1 {
   background: rgba(255, 255, 255, 0.808);
   font-family: "Homemade Apple", cursive;
@@ -34,8 +37,20 @@ footer {
   text-align: center;
   z-index: 0;
 }
+#angular {
+  height: 100px;
+}
+#ang-mat {
+  height: 85px;
+}
+.rec{
+  font-family: 'Roboto';
+  font-size: 1.5em;
+  padding: 10px;
+}
 #section-header {
   background: rgba(255, 255, 255, 0.808);
+  margin-top: 20px;
 }
 #app-name {
   font-family: "Homemade Apple", cursive;
