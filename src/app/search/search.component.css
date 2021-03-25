@@ -19,6 +19,7 @@ body.background {
   background-repeat: repeat;
   background-size: cover; */
 }
+
 main {
   background-image: url("src/assets/parchment.jpeg");
 }

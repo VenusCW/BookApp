@@ -17,15 +17,15 @@ routes.get("/routes", (req, res) => {
     pool.query('SELECT * FROM library WHERE name = $1', [readername]).then((result) => {
       const books = result.rows;
       console.log(books);
-      res.send('routes'); 
+      res.send('routes');
       res.status(200).json(books);
     });
-//   } else {
-//     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
-//       [readername, status, 'The Stand', 'Stephen King', 'Thriller']).then((result) => { res.status(201).json(result.rows) })
-//     // res.json("test")
-//   }
-};
+    //   } else {
+    //     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
+    //       [readername, status, 'The Stand', 'Stephen King', 'Thriller']).then((result) => { res.status(201).json(result.rows) })
+    //     // res.json("test")
+    //   }
+  };
 });
 
 routes.post("/routes", (req, res) => {
@@ -56,6 +56,8 @@ routes.post('/searchInput', (req, res) => {
       res.status(201).json(newBookDets);
     })
 });
+
+routes.delete('/')
 
 // routes.post("/routes/from-search", (req, res) => {
 //   let book = req.body;
