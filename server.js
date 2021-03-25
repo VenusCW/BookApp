@@ -12,9 +12,6 @@ app.use("/", routes);
 
 app.use(express.static(__dirname + "/public"));
 
-app.use('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'src/index.html'));
-});
 
 const port = process.env.PORT || 3000;
 
