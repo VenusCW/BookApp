@@ -17,7 +17,7 @@ interface Books {
 export class LibraryService {
   url = 'https://pocket-library.herokuapp.com/routes';
   // url = "/routes"
-  
+
   public readername: string = '';
   public books: Books[] = [];
   public title: string = '';
@@ -46,5 +46,12 @@ export class LibraryService {
     this.http.post(this.url, newSearchBook).subscribe((response: any) => {
       console.log(response);
     });
+  }
+
+  deleteBook(librarycard: number) {
+    this.http.delete(this.url + librarycard).subscribe((response:any) => {
+      this.getLibrary();
+      console.log(response);
+    })
   }
 }

@@ -4,7 +4,6 @@ import { FormControl } from '@angular/forms';
 import { LibraryService } from '../library.service';
 import { Router } from '@angular/router';
 
-
 interface Book {
   librarycard: number;
   name: string;
@@ -20,14 +19,15 @@ interface Book {
   styleUrls: ['./existing-library.component.css'],
 })
 export class ExistingLibraryComponent implements OnInit {
-
   public books: Book[] = [];
   public readername: string = '';
+  public librarycard: number = 0;
 
-  constructor(
-    public library: LibraryService,
-    public router: Router
-  ) {}
+  constructor(public library: LibraryService, public router: Router) {}
+
+  delete() {
+    this.library.deleteBook;
+  }
 
   ngOnInit(): void {
     this.library.getLibrary();
