@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,13 +20,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {ReactiveFormsModule} from '@angular/forms';  
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LibraryFormComponent } from './library-form/library-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BooksService } from './books.service';
 import { AboutComponent } from './about/about.component';
+import { InterceptorService } from './interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -56,10 +58,13 @@ import { AboutComponent } from './about/about.component';
     MatCardModule,
     MatListModule,
     MatInputModule,
-    MatSelectModule, 
-    ReactiveFormsModule,  
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
-  providers: [BooksService],
+  providers: [
+    BooksService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

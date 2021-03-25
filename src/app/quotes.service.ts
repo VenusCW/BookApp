@@ -10,27 +10,25 @@ interface Response {
   providedIn: 'root',
 })
 export class QuotesService {
-  url = 'https://api.quotable.io/random'
-  quotes: any [] = [];
-  author: string = "";
+  url = 'https://api.quotable.io/random';
+  quotes: any[] = [];
+  author: string = '';
   constructor(private http: HttpClient) {}
 
   getQuotes() {
     const requestURL = this.url;
-    this.http.get(requestURL).subscribe(
-      (response:any) => {
-        this.quotes = response.content;
-        this.author = response.author; 
-      }
-    )
+    this.http.get(requestURL).subscribe((response: any) => {
+      this.quotes = response.content;
+      this.author = response.author;
+    });
   }
-//   getQuotes() {
-//     const requestURL = this.getUrlWithApiKey() + '?q=';
+  //   getQuotes() {
+  //     const requestURL = this.getUrlWithApiKey() + '?q=';
 
-//     this.http.get(requestURL).subscribe(
-//       (response: any) => {
-//         console.log(response);
-//         this.quotes = response.item;
+  //     this.http.get(requestURL).subscribe(
+  //       (response: any) => {
+  //         console.log(response);
+  //         this.quotes = response.item;
 
   // url =
   //   'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
@@ -41,43 +39,43 @@ export class QuotesService {
 
   // getQuotes() {
   //   const apiUrl= 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote'
-//     const requestURL = this.getUrlWithApiKey();
+  //     const requestURL = this.getUrlWithApiKey();
 
-//     this.http.get(requestURL).subscribe(
-//       (Response) => {
-//         console.log(Response);
-//         //  const options = response.results;
-//       },
-//       (error) => {
-//         console.error(error);
-//       }
-//     );
-//   }
-//   getUrlWithApiKey() {
-//     return `${this.url}+?rapidapi-key=${this.apiKey}`;
-//   }
-// }
-//     return `${this.url}?api_key=${this.apiKey}&language=en-US`;
-//   }
-// }
-// this.getQuotes();
-//   return this.http.get(`$this.apiUrl}`);
-// }
-// }
-// const settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc",
-// 		"x-rapidapi-host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
-// 	}
-// };
+  //     this.http.get(requestURL).subscribe(
+  //       (Response) => {
+  //         console.log(Response);
+  //         //  const options = response.results;
+  //       },
+  //       (error) => {
+  //         console.error(error);
+  //       }
+  //     );
+  //   }
+  //   getUrlWithApiKey() {
+  //     return `${this.url}+?rapidapi-key=${this.apiKey}`;
+  //   }
+  // }
+  //     return `${this.url}?api_key=${this.apiKey}&language=en-US`;
+  //   }
+  // }
+  // this.getQuotes();
+  //   return this.http.get(`$this.apiUrl}`);
+  // }
+  // }
+  // const settings = {
+  // 	"async": true,
+  // 	"crossDomain": true,
+  // 	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+  // 	"method": "GET",
+  // 	"headers": {
+  // 		"x-rapidapi-key": "3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc",
+  // 		"x-rapidapi-host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
+  // 	}
+  // };
 
-// this.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
+  // this.ajax(settings).done(function (response) {
+  // 	console.log(response);
+  // });
   // const randomQuotes = require('request');
 
   // const options = {
@@ -92,30 +90,29 @@ export class QuotesService {
   //     }
   // };
 
+  // this.requestURL(options, function (error, response, body) {
+  //     if (error) throw new Error(error);
 
-    // this.requestURL(options, function (error, response, body) {
-    //     if (error) throw new Error(error);
+  //     console.log(body);
+  // });
 
-    //     console.log(body);
-    // });
+  // const requestURL = require('request');
 
-// const requestURL = require('request');
+  // getRandomQuotes(){
+  // const options = {
+  //     method: 'GET',
+  //     url: 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote',
+  //     qs: {token: 'ipworld.info'},
+  //     headers: {
+  //       'x-rapidapi-key': '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc',
+  //       'x-rapidapi-host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com',
+  //       useQueryString: true
+  //     }
+  //   };
 
-// getRandomQuotes(){
-// const options = {
-//     method: 'GET',
-//     url: 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote',
-//     qs: {token: 'ipworld.info'},
-//     headers: {
-//       'x-rapidapi-key': '3e4bb66922mshd5db928295295c3p1def1bjsncfaf9e1565bc',
-//       'x-rapidapi-host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com',
-//       useQueryString: true
-//     }
-//   };
+  //   this.requestURL(options, function () {
+  //       if (error) throw new Error(error);
 
-//   this.requestURL(options, function () {
-//       if (error) throw new Error(error);
-
-//       console.log(body);
-//   });
+  //       console.log(body);
+  //   });
 }
