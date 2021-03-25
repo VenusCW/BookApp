@@ -19,6 +19,9 @@ body.background {
   background-repeat: repeat;
   background-size: cover; */
 }
+main {
+  background-image: url("src/assets/parchment.jpeg");
+}
 .searchBooks {
   font-family: "Homemade Apple", cursive;
   text-align: center;
