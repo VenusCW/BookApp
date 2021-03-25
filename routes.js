@@ -18,12 +18,8 @@ routes.get("/routes", (req, res) => {
     pool.query('SELECT * FROM library WHERE name = $1', [readername]).then((result) => {
       const books = result.rows;
       console.log(books);
-<<<<<<< HEAD
-      //res.send('routes');
-      res.status(200).json(books);
-=======
+
       return res.status(200).json(books);
->>>>>>> 3282710fa90d06ea97d12bcc4f918ae492c51d6c
     });
     //   } else {
     //     pool.query('INSERT INTO library (name, status, title, author, category) VALUES ($1, $2, $3, $4, $5)',
@@ -62,6 +58,11 @@ routes.post('/searchInput', (req, res) => {
     })
 });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3282710fa90d06ea97d12bcc4f918ae492c51d6c
 
 routes.get("/healthcheck", (req, res) => {
 
