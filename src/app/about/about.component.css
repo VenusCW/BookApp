@@ -38,8 +38,8 @@ footer {
   background:rgba(255, 255, 255, 0.808)
 }
 .about-devs-section {
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: 3.5em;
+  margin-right: 3.5em;
   margin-top: 3.5em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
