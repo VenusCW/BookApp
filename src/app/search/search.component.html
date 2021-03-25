@@ -16,24 +16,33 @@
       class="search"
     />
     <button *ngIf="!show" (click)="getBooksList()" class="getBooks">
-      <i class="fas fa-search"></i>
+      <i class="fas fa-search fa-2x"></i>
     </button>
-    <div class="advanced-search">
-      <button (click)="toggle()" class="adv-btn" *ngIf="!show">advanced search</button>
-      <div *ngIf="show" class="more-inputs">
-        <input [(ngModel)]="author" class="adv-input" placeholder="search by author" />
-        <input [(ngModel)]="subject" class="adv-input" placeholder="search by subject" />
+  </div>
+
+  <div class="advanced-search">
+    <button (click)="toggle()" class="adv-btn" *ngIf="!show">
+      advanced search
+    </button>
+    <div class="adv-fields">
+      <div *ngIf="show">
+        <input
+          [(ngModel)]="author"
+          class="adv-input"
+          placeholder="search by author"
+        />
+        <input
+          [(ngModel)]="subject"
+          class="adv-input"
+          placeholder="search by subject"
+        />
       </div>
-      <button
-        *ngIf="show"
-        (click)="getAdvBooksList()"
-        class="getBooks"
-        id="adv-search-btn"
-      >
-        <i class="fas fa-search"></i>
+      <button *ngIf="show" (click)="getAdvBooksList()" class="getAdvBooks">
+        <i class="fas fa-search fa-lg"></i>
       </button>
     </div>
   </div>
+
   <div id="details-container">
     <mat-card
       class="example-card"
