@@ -11,9 +11,9 @@ app.use("/", routes);
 
 app.use(express.static(__dirname + "/public"));
 
-app.use('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'src/index.html'));
-});
+// app.use('*', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, 'src/index.html'));
+// });
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");

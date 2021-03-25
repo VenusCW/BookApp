@@ -25,9 +25,9 @@ export class ExistingLibraryComponent implements OnInit {
 
   constructor(public library: LibraryService, public router: Router) {}
 
-  // delete() {
-  //   this.library.deleteBook;
-  // }
+  delete() {
+    this.library.deleteBook;
+  }
 
   ngOnInit(): void {
     this.library.getLibrary();

@@ -58,6 +58,15 @@ routes.post('/searchInput', (req, res) => {
     })
 });
 
+
+routes.delete("/:librarycard", (req, res) => {
+  let librarycard = parseInt(req.params.librarycard);
+  pool.query(`DELETE FROM library WHERE librarycard=$1`, [librarycard]).then((results) => {
+    res.status(204).json(results.rows);
+  });
+});
+
+
 routes.get("/healthcheck", (req, res) => {
 
   res.json('YAY');
