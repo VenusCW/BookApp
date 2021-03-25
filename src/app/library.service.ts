@@ -48,10 +48,10 @@ export class LibraryService {
     });
   }
 
-  deleteBook(librarycard: number) {
-    this.http.delete(this.url + librarycard).subscribe((response:any) => {
-      this.getLibrary();
-      console.log(response);
-    })
-  }
+//   deleteBook(librarycard: number) {
+//     this.http.delete(this.url + librarycard).subscribe((response:any) => {
+//       this.getLibrary();
+//       console.log(response);
+//     })
+//   }
 }

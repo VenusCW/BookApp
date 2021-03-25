@@ -17,7 +17,6 @@ routes.get("/routes", (req, res) => {
     pool.query('SELECT * FROM library WHERE name = $1', [readername]).then((result) => {
       const books = result.rows;
       console.log(books);
-      res.send('routes');
       res.status(200).json(books);
     });
     //   } else {
@@ -57,12 +56,12 @@ routes.post('/searchInput', (req, res) => {
     })
 });
 
-routes.delete('/librarycard', (req, res) => {
-  let librarycard = parseInt(req.params.librarycard);
-  pool.query(`DELETE FROM library WHERE librarycard=$1`, [librarycard].then((results) => {
-    res.status(204).json(results.rows);
-  }))
-}); 
+// routes.delete('/librarycard', (req, res) => {
+//   let librarycard = parseInt(req.params.librarycard);
+//   pool.query(`DELETE FROM library WHERE librarycard=$1`, [librarycard].then((results) => {
+//     res.status(204).json(results.rows);
+//   }))
+// });
 
 
 // routes.post("/routes/from-search", (req, res) => {

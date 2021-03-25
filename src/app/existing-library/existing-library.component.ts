@@ -21,13 +21,13 @@ interface Book {
 export class ExistingLibraryComponent implements OnInit {
   public books: Book[] = [];
   public readername: string = '';
-  public librarycard: number = 0;
+  // public librarycard: number = 0;
 
   constructor(public library: LibraryService, public router: Router) {}
 
-  delete() {
-    this.library.deleteBook;
-  }
+  // delete() {
+  //   this.library.deleteBook;
+  // }
 
   ngOnInit(): void {
     this.library.getLibrary();
