@@ -30,15 +30,19 @@ export class LibraryFormComponent implements OnInit {
   public category: string = '';
 
   categories: Category[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+    {value: 'Fiction', viewValue: 'Fiction'},
+    {value: 'Non-Fiction', viewValue: 'Non-Fiction'},
+    {value: 'Romance', viewValue: 'Romance'},
+    {value: 'Biography', viewValue: 'Biography'},
+    {value: 'Auto-Biography', viewValue: 'Auto-Birgraphy'}, 
+    {value: 'Mystery', viewValue: 'Mystery'}, 
+    {value: 'Horror', viewValue: 'Horror'}
   ];
 
   bookStatus: Status[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+    {value: 'On my shelf', viewValue: 'On my shelf'},
+    {value: 'Read', viewValue: 'Read'},
+    {value: 'Wishlist', viewValue: 'Wishlist'}
   ];
   constructor(public library: LibraryService, public router: Router) {}
 

@@ -4,7 +4,7 @@
 <section class="container">
 <mat-form-field  class=“example-form-field”>
   <mat-label>Book Title</mat-label>
-  <input id="title" name="title" matInput type="text" required aria-required="false"
+  <input [(ngModel)]="title" id="title" name="title" matInput type="text" required aria-required="false"
   [formControl]="bookTitle">
   <mat-error *ngIf="bookTitle.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>
