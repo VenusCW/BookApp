@@ -18,3 +18,7 @@ img {
 header {
     background-position: center;
 }
+
+.main {
+  background-image: url("src/assets/parchment.jpeg"); 
+}

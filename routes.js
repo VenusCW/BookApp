@@ -11,7 +11,7 @@ const pool = require('./connection');
 //   })
 // })
 
-routes.get("/routes", (req, res) => {
+routes.get("/", (req, res) => {
   let readername = req.query.reader;
   console.log(readername);
   if (readername) {
@@ -29,7 +29,7 @@ routes.get("/routes", (req, res) => {
   };
 });
 
-routes.post("/routes", (req, res) => {
+routes.post("/", (req, res) => {
   let book = req.body;
 
   console.log(req.body);
@@ -66,6 +66,12 @@ routes.delete("/:librarycard", (req, res) => {
   });
 });
 
+routes.put("/:librarycard", (req, res) =>{
+  let id = parseInt(req.params.librarycard); 
+  pool.query(`UPDATE library SET status = $1 WHERE librarycard =$2 RETURNING *`, ["Read", id]).then((results) =>{
+    res.status(200).json(results.rows); 
+  })
+})
 
 routes.get("/healthcheck", (req, res) => {
 
