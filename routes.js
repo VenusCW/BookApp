@@ -66,10 +66,10 @@ routes.delete("/:librarycard", (req, res) => {
   });
 });
 
-routes.put("/:librarycard", (req, res) =>{
-  let id = parseInt(req.params.librarycard); 
-  pool.query(`UPDATE library SET status = $1 WHERE librarycard =$2 RETURNING *`, ["Read", id]).then((results) =>{
-    res.status(200).json(results.rows); 
+routes.put("/:librarycard", (req, res) => {
+  let id = parseInt(req.params.librarycard);
+  pool.query(`UPDATE library SET status = $1 WHERE librarycard =$2 RETURNING *`, ["Read", id]).then((results) => {
+    res.status(200).json(results.rows);
   })
 })
 

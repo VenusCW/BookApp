@@ -5,20 +5,24 @@
       <picture>
         <source media="(max-width: 768px)" srcset="assets/bookshelf.jpeg" />
         <source media="(min-width: 769px)" srcset="assets/longbookshelf2.png" />
-        <img src="assets/longbookshelf2.png">
+        <img src="assets/longbookshelf2.png" />
       </picture>
     </div>
 
-    <mat-list>
+    <mat-list class="list">
       <div mat-subheader class="booksList">My Books</div>
       <mat-list-item *ngFor="let library of library.books">
-
         <mat-icon mat-list-icon><img src="assets/book.png" /></mat-icon>
         <div mat-line>{{ library.title }}</div>
         <div mat-line>{{ library.author }}</div>
         <div mat-line>{{ library.status }}</div>
-        <button mat-icon-button (click)="delete(library.librarycard)">DELETE</button>
-        <button mat-icon-button (click)="update(library.librarycard)">I Read This!</button>
+        <button mat-raised-button color="primary" class="btns" (click)="delete(library.librarycard)">
+          DELETE
+        </button>
+        <br />
+        <button mat-raised-button color="primary" class="btns" (click)="update(library.librarycard)">
+          I Read This!
+        </button>
       </mat-list-item>
     </mat-list>
     <mat-divider></mat-divider>

@@ -15,7 +15,7 @@ interface Books {
   providedIn: 'root',
 })
 export class LibraryService {
- url = 'https://pocket-library.herokuapp.com/routes/';
+  url = 'https://pocket-library.herokuapp.com/routes/';
   // url = "/routes"
 
   public readername: string = '';
@@ -46,8 +46,8 @@ export class LibraryService {
     });
   }
 
-    deleteBook(librarycard: number) {
-      this.http.delete(this.url + librarycard).subscribe((response:any) => {
+    deleteBook(currentBook: number) {
+      this.http.delete(this.url + currentBook, {}).subscribe((response:any) => {
         this.getLibrary();
         console.log(response);
       })
